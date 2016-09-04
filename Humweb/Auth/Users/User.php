@@ -39,6 +39,13 @@ class User extends Authenticatable implements PemissibleContract, GroupableContr
      */
     protected $hidden = ['password', 'remember_token'];
 
+    protected $casts = [
+        'permissions' => 'array'
+    ];
+
+    protected $attributes = [
+        'permissions' => []
+    ];
 
     public function getFullName()
     {

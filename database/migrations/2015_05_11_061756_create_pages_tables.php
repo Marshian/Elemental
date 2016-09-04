@@ -20,6 +20,7 @@ class CreatePagesTables extends Migration {
 			$table->string('uri');
 			$table->string('title');
 			$table->string('slug');
+			$table->string('layout')->nullable();
 			$table->text('content');
 			$table->boolean('published');
 			$table->integer('created_by');

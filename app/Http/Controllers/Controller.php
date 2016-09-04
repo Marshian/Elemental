@@ -74,7 +74,7 @@ abstract class Controller extends BaseController
      */
     protected function setLayout($name)
     {
-        $this->layout = $name;
+        $this->layout = is_string($name) ? view($name) : $name;
     }
 
     /**

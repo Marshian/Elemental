@@ -93,6 +93,10 @@ class PagesController extends Controller
                 //$this->_metadata[] = '<script src="/assets/js/ckeditor/ckeditor.js"></script>';
             }
 
+            if (!empty($page->layout)){
+                $this->setLayout($page->layout);
+            }
+
             //$page->content = \StringView::create($page->content, (array)$page, $page->uri, $page->updated_at->timestamp);
             //$page->content = ShortParser::parse($page->content);
             //$this->viewShare('metadata', implode("\n",$this->_metadata));

@@ -3,6 +3,7 @@
 namespace Humweb\Pages\Controllers;
 
 use App\Http\Controllers\AdminController;
+use Humweb\Pages\Layouts;
 use Humweb\Pages\Presenters\PagePresenter;
 use Humweb\Pages\Repositories\DbPageRepositoryInterface;
 use Humweb\Pages\Requests\PageSaveRequest;
@@ -77,6 +78,7 @@ class AdminPagesController extends AdminController
                 'parent_id' => $request->get('parent_id', 0),
                 'uri' => $request->get('slug'),
                 'title' => $request->get('title'),
+                'layout' => $request->get('layout'),
                 'content' => $request->get('content'),
                 'published' => $request->get('published'),
                 'css' => $request->get('css'),
@@ -109,18 +111,21 @@ class AdminPagesController extends AdminController
         return $this->setContent('pages::admin.index', $this->data);
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param \Humweb\Pages\Layouts $layouts
+     * @param int                   $id
      *
-     * @return Response
+     * @return \Humweb\Pages\Controllers\Response
      */
-    public function getEdit($id)
+    public function getEdit(Layouts $layouts, $id)
     {
         $page = $this->page->find($id);
 
         $this->data = [
+            'layouts' => $layouts->getLayouts(),
             'page' => $page,
             'available_tags' => $this->tag->select('slug', 'name')->orderBy('name', 'asc')->pluck('name', 'slug'),
             'current_tags' => ($page->tagged->count() > 0) ? $page->tagged()->pluck('name', 'slug') : [],
@@ -148,6 +153,7 @@ class AdminPagesController extends AdminController
         $data = [
             'title' => $request->get('title'),
             'content' => $request->get('content'),
+            'layout' => $request->get('layout'),
             'slug' => Str::slug($request->get('slug')),
             'uri' => Str::slug($request->get('slug')),
             'created_by' => $this->currentUser->id,

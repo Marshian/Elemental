@@ -28,6 +28,7 @@ class Page extends \Eloquent
         'published_at',
         'parent_id',
         'slug',
+        'layout',
         'content',
         'published',
         'js',
