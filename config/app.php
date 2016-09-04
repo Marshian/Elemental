@@ -178,6 +178,19 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Humweb\Modules\ModuleServiceProvider::class,
+        Humweb\Html\HtmlServiceProvider::class,
+        Humweb\Auth\AuthServiceProvider::class,
+        Humweb\Auth\AuthRouteServiceProvider::class,
+        Humweb\Settings\ServiceProvider::class,
+        Humweb\Menus\MenusServiceProvider::class,
+        Humweb\Menus\MenusRouteServiceProvider::class,
+        Humweb\Settings\SettingsRouteServiceProvider::class,
+        Humweb\Pages\ServiceProvider::class,
+        Humweb\Pages\PagesRouteServiceProvider::class,
+        Humweb\Categories\Http\CategoriesRouteServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+
     ],
 
     /*
@@ -224,6 +237,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

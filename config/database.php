@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DARKSTAR_DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -48,17 +48,17 @@ return [
 
         'sqlite' => [
             'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
+            'database' => env('DARKSTAR_DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
         ],
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DARKSTAR_DB_HOST', 'localhost'),
+            'port' => env('DARKSTAR_DB_PORT', '3306'),
+            'database' => env('DARKSTAR_DB_DATABASE', 'forge'),
+            'username' => env('DARKSTAR_DB_USERNAME', 'forge'),
+            'password' => env('DARKSTAR_DB_PASSWORD', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
@@ -68,11 +68,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DARKSTAR_DB_HOST', 'localhost'),
+            'port' => env('DARKSTAR_DB_PORT', '5432'),
+            'database' => env('DARKSTAR_DB_DATABASE', 'forge'),
+            'username' => env('DARKSTAR_DB_USERNAME', 'forge'),
+            'password' => env('DARKSTAR_DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
