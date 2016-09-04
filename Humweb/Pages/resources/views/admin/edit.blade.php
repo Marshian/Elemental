@@ -39,6 +39,11 @@
                                 {!! Form::select('published', [0 => 'Draft', 1 => 'Live'], Request::old("published", $page->published), ['class' => 'select',
                                 'style' => 'display:block']) !!}
                             </div>
+                            <hr>
+                            <div class="form-group">
+                                {!! Form::label('layout', 'Layout') !!}
+                                {!! Form::select('layout', $layouts, Request::old("layout", $page->layout), ['class' => 'select', 'style' => 'display:block']) !!}
+                            </div>
                         </div>
                     </div>
                 </div>
