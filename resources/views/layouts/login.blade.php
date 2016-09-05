@@ -15,23 +15,23 @@
             {{ $siteSettings['site.name'] or 'Dark Star Mountain Tours' }} - Admin
         @show
     </title>
+    <title>
+        @section('title')
+            {{ $siteSettings['site.name'] or 'Dark Star Mountain Tours' }} - Admin
+        @show
+    </title>
 {{ $metadata or '' }}
 
-<!-- Bootstrap core CSS -->
-    <link href="{{ asset('css/app-framework.css') }}" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<!-- Styles -->
+    <link href="/css/app.css" rel="stylesheet">
 
-    @yield('styles')
-
+    <!-- Scripts -->
+    <script>
+        window.Laravel = <?php echo json_encode([
+                'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-    <![endif]-->
-
     @yield('header_scripts')
 </head>
 
@@ -41,11 +41,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
+            <div class="text-center">
+                <img src="/img/logo.svg" alt="Dark Star Mountain Tours" style="width: 66%;height: auto;margin-bottom: 20px;">
+            </div>
             @include('notifications')
             @yield('content')
         </div>
     </div>
 </div>
-
+<!-- Scripts -->
+<script src="/js/app.js"></script>
 </body>
 </html>

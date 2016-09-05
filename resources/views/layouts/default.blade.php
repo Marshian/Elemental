@@ -27,7 +27,8 @@
 </head>
 <body>
 @include('partials.frontend-navbar')
-
+<br>
+<br>
 <div class="container">
     @yield('content')
 </div>
