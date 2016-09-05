@@ -3162,8 +3162,8 @@ tbody.collapse.in {
       color: #ccc; }
 
 .navbar-inverse {
-  background-color: #222;
-  border-color: #090909; }
+  background-color: #000;
+  border-color: #000; }
   .navbar-inverse:after {
     bottom: -18px;
     background-image: url("../img/scratches-3-dark.png");
@@ -3204,15 +3204,15 @@ tbody.collapse.in {
       background-color: #fff; }
   .navbar-inverse .navbar-collapse,
   .navbar-inverse .navbar-form {
-    border-color: #101010; }
+    border-color: black; }
   .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     background-color: transparent;
     color: #fff; }
   @media (max-width: 767px) {
     .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-      border-color: #090909; }
+      border-color: #000; }
     .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-      background-color: #090909; }
+      background-color: #000; }
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
       color: #fff; }
       .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
