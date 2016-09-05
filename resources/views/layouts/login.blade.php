@@ -8,7 +8,7 @@
 <![endif]-->
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         @section('title')
@@ -17,7 +17,7 @@
     </title>
 {{ $metadata or '' }}
 
-    <!-- Bootstrap core CSS -->
+<!-- Bootstrap core CSS -->
     <link href="{{ asset('css/app-framework.css') }}" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 
@@ -35,17 +35,17 @@
     @yield('header_scripts')
 </head>
 
-    <body style="padding: 10% 0;">
-	
-		<!-- Container -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                        @include('notifications')
-                        @yield('content')
-                </div>
-            </div>
-        </div>
+<body style="padding: 10% 0;">
 
-	</body>
+<!-- Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            @include('notifications')
+            @yield('content')
+        </div>
+    </div>
+</div>
+
+</body>
 </html>

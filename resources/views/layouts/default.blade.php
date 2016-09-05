@@ -15,24 +15,24 @@
     </title>
 {{ $metadata or '' }}
 
-    <!-- Styles -->
+<!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
+                'csrfToken' => csrf_token(),
         ]); ?>
     </script>
 </head>
 <body>
 @include('partials.frontend-navbar')
 
-    <div class="container">
-        @yield('content')
-    </div>
+<div class="container">
+    @yield('content')
+</div>
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
+<!-- Scripts -->
+<script src="/js/app.js"></script>
 </body>
 </html>

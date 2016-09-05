@@ -15,7 +15,7 @@
     </title>
 {{ $metadata or '' }}
 
-    <!-- Styles -->
+<!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
