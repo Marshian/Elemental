@@ -35,7 +35,7 @@
     @yield('header_scripts')
 </head>
 
-<body style="padding: 10% 0;">
+<body style="padding: 5% 0;">
 
 <!-- Container -->
 <div class="container">
