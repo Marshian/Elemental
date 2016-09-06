@@ -45,7 +45,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                {{ $siteSettings['site.name'] or 'HumboldtWeb' }} <sup>BETA</sup>
+                {{ $siteSettings['site.name'] or 'HumboldtWeb' }}
             </a>
         </div>
 

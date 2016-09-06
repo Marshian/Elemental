@@ -13,6 +13,11 @@
             <ul class="nav navbar-nav">
                 {!! $menu or '' !!}
             </ul>
+            @if(isset($admin_menu))
+            <ul class="nav navbar-nav">
+                {!! $admin_menu or '' !!}
+            </ul>
+            @endif
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
