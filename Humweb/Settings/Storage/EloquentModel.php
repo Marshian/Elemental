@@ -16,6 +16,10 @@ class EloquentModel extends Model
      */
     protected $primaryKey = null;
 
+    protected $attributes = [
+        'configurable_id' => 0
+    ];
+
     /**
      * Indicates if the IDs are auto-incrementing.
      *

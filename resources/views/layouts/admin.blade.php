@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         @section('title')
-            {{ $siteSettings['site.name'] or 'HumboldtWeb' }} - Admin
+            {{ $siteSettings['site.name'] or 'Dark Star Mountain Tours' }} - Admin
         @show
     </title>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
