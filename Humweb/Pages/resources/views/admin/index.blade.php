@@ -26,7 +26,7 @@
 
         </div>
 
-        {{--<script src="{{ asset('js/jquery.nestable.js') }}"></script>--}}
+        <script src="{{ asset('js/jquery.nestable.js') }}"></script>
 
         <script>
             $(function(){
