@@ -38,7 +38,7 @@ class ModuleBaseProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $permissions;
+    protected $permissions = null;
 
     /**
      * Register the service provider.
