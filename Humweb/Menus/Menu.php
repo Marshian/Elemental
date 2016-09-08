@@ -185,4 +185,16 @@ class Menu
 
         return $this->presenter;
     }
+
+    /**
+     * @param string $labelAttribute
+     *
+     * @return Menu
+     */
+    public function setLabelAttribute($labelAttribute)
+    {
+        $this->labelAttribute = $labelAttribute;
+
+        return $this;
+    }
 }
