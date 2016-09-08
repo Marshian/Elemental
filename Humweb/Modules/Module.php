@@ -14,12 +14,18 @@ class Module extends Collection
 
     public function getAdminMenus()
     {
+
         if (empty($this->adminMenus)) {
+            $this->adminMenus = config('menus.admin.sections');
+
             //Create menu array for admin panel
             foreach ($this->items as $name => $module) {
-                if (method_exists($module, 'getAdminMenu')) {
-                    $this->adminMenus = array_merge_recursive($this->adminMenus, $module->getAdminMenu());
-                }
+                $this->importAdminMenus($module);
+            }
+
+            // Remove unused
+            foreach ($this->adminMenus as $k => $v) {
+                if (empty($v['children'])) unset($this->adminMenus[$k]);
             }
         }
 
@@ -39,5 +45,18 @@ class Module extends Collection
         }
 
         return $this->availablePermissions;
+    }
+
+
+    /**
+     * @param $module
+     */
+    protected function importAdminMenus($module)
+    {
+        if (method_exists($module, 'getAdminMenu')) {
+            foreach ($module->getAdminMenu() as $key => $menu) {
+                $this->adminMenus[$key]['children'] = $menu;
+            }
+        }
     }
 }
