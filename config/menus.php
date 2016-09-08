@@ -3,19 +3,24 @@ return [
     'admin' => [
         'sections' => [
             'Content'   => [
-            //    'icon' => '<i class="fa fa-book"></i>'
+                'label' => 'Content',
+                'icon' => '<i class="fa fa-book"></i>',
             ],
             'Structure' => [
-            //    'icon' => '<i class="fa fa-institution"></i>'
+                'label' => 'Structure',
+                'icon' => '<i class="fa fa-institution"></i>'
             ],
             'Settings'  => [
-            //    'icon' => '<i class="fa fa-cog"></i>'
+                'label' => 'Settings',
+                'icon' => '<i class="fa fa-cog"></i>'
             ],
             'Users'     => [
-            //    'icon' => '<i class="fa fa-users"></i>'
+                'label' => 'Users',
+                'icon' => '<i class="fa fa-users"></i>'
             ],
             'System'    => [
-            //    'icon' => '<i class="fa fa-plug"></i>'
+                'label' => 'System',
+                'icon' => '<i class="fa fa-plug"></i>'
             ]
         ]
     ]
