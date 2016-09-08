@@ -64,12 +64,15 @@
       var _this = this;
       console.log('click..');
       this.$fieldAdd.on('click', function () {
-        var fieldName = _this.$fieldType.find(':selected').val();
+        var $selected = _this.$fieldType.find(':selected');
+        if($selected.is(':disabled')) return;
+        var fieldName = $selected.val();
         var field = _this.findField(fieldName);
+        $('[value="' + field.field + '"]').prop('disabled', true);
         console.log(fieldName, fieldTypes[field.type](fieldName, ''))
         _this.$target.append(
         '<div class="form-group">' +
-        '<label>'+field.label+'</label>' +
+        '<label>' + field.label + '</label>' +
         fieldTypes[field.type](fieldName, '') +
         '</div>'
         );
