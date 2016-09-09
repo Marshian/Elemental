@@ -6,6 +6,7 @@ use Humweb\Auth\Users\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder {
 
@@ -68,6 +69,58 @@ class DatabaseSeeder extends Seeder {
             $basicUser->groups()->save($userGroup);
         });
 
+
+        DB::table('pages')->insert([
+            'created_by'       => 1,
+            'slug'             => Str::slug('Test title'),
+            'title'            => 'Test title',
+            'parent_id'        => 0,
+            'uri'              => Str::slug('Test title'),
+            'layout'           => '',
+            'content'          => 'Default content',
+            'published'        => 1,
+            'css'              => '',
+            'js'               => '',
+            'meta_title'       => 'Test title',
+            'meta_description' => '',
+            'meta_robots'      => '',
+            'is_index'         => 1,
+            'order'            => 1,
+        ]);
+        DB::table('pages')->insert([
+            'created_by'       => 1,
+            'slug'             => Str::slug('Test title 2'),
+            'title'            => 'Test title 2',
+            'parent_id'        => 0,
+            'uri'              => Str::slug('Test title 2'),
+            'layout'           => '',
+            'content'          => 'Default content',
+            'published'        => 1,
+            'css'              => '',
+            'js'               => '',
+            'meta_title'       => 'Test title 2',
+            'meta_description' => '',
+            'meta_robots'      => '',
+            'is_index'         => 1,
+            'order'            => 1,
+        ]);
+        DB::table('pages')->insert([
+            'created_by'       => 1,
+            'slug'             => Str::slug('Test title 3'),
+            'title'            => 'Test title 3',
+            'parent_id'        => 0,
+            'uri'              => Str::slug('Test title 3'),
+            'layout'           => '',
+            'content'          => 'Default content',
+            'published'        => 1,
+            'css'              => '',
+            'js'               => '',
+            'meta_title'       => 'Test title 3',
+            'meta_description' => '',
+            'meta_robots'      => '',
+            'is_index'         => 1,
+            'order'            => 1,
+        ]);
     }
 
     private function makeUser($data)
