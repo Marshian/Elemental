@@ -55,7 +55,10 @@ class Module extends Collection
     {
         if (method_exists($module, 'getAdminMenu')) {
             foreach ($module->getAdminMenu() as $key => $menu) {
-                $this->adminMenus[$key]['children'] = $menu;
+                if (!isset($this->adminMenus[$key]['children'])) {
+                    $this->adminMenus[$key]['children'] = [];
+                }
+                $this->adminMenus[$key]['children'] = array_merge_recursive($this->adminMenus[$key]['children'], $menu);
             }
         }
     }
