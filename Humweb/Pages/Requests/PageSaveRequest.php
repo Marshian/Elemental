@@ -2,9 +2,7 @@
 
 namespace Humweb\Pages\Requests;
 
-
 use Illuminate\Foundation\Http\FormRequest;
-
 
 class PageSaveRequest extends FormRequest
 {
@@ -18,6 +16,7 @@ class PageSaveRequest extends FormRequest
         return true;
     }
 
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -26,12 +25,12 @@ class PageSaveRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'title' => 'required',
-            'slug' => 'required',
-            //'uri'              => 'required|unique:pages',
-            'content' => 'required',
+            'title'     => 'required',
+            'slug'      => 'required',
+            'uri'       => 'required|unique:pages',
+            'content'   => 'required',
             'published' => 'boolean',
-            'is_index' => 'boolean',
+            'is_index'  => 'boolean',
         ];
 
         if ($this->id) {

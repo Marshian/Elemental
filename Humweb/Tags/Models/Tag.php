@@ -29,7 +29,7 @@ class Tag extends Model
      */
     public static function cleanupUnused()
     {
-        return static::where('count', '=', 0)->where('suggest', false)->delete();
+        return static::where('count', '=', 0)->delete();
     }
 
     /**

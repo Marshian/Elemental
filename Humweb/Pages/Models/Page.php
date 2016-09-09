@@ -6,11 +6,6 @@ use Humweb\Core\Data\Traits\HasRelatedContent;
 use Humweb\Core\Data\Traits\SluggableTrait;
 use Humweb\Tags\Models\TaggableTrait;
 
-//use Humweb\Pages\Models\PagesInterface as PagesInterface;
-
-/*
-    @todo Build low-level metadata component
- */
 
 class Page extends \Eloquent
 {
