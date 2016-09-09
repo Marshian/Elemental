@@ -140,7 +140,7 @@ trait TaggableTrait
         $tagName = trim($tagName);
         $tagSlug = Str::slug($tagName);
         $tag = $this->tagged()->where('slug', '=', $tagSlug)->first();
-//dd($tag->toArray());
+
         if ($tag && $count = $this->tagged()->detach($tag->id)) {
             Tag::decrementCount($tagSlug, $tagName, $count);
         }
@@ -171,11 +171,11 @@ trait TaggableTrait
     public function updateTagCounts($changes)
     {
         foreach ($changes['attached'] as $id) {
-            Tag::where('id', $id)->update(['count' => DB::raw('count+1')]);
+            Tag::where('id', $id)->increment('count');
         }
 
         foreach ($changes['detached'] as $id) {
-            Tag::where('id', $id)->update(['count' => DB::raw('count-1')]);
+            Tag::where('id', $id)->decrement('count');
         }
     }
 
