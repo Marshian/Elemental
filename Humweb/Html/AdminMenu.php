@@ -3,19 +3,22 @@
 namespace Humweb\Html;
 
 use Humweb\Menus\Menu;
-use Humweb\Menus\Presenters\Bootstrap;
 
 /**
  * AdminMenu.
  */
 class AdminMenu
 {
-    protected $menu = [];
+    /**
+     * @var \Humweb\Modules\Module
+     */
     protected $modules;
 
 
     /**
      * AdminMenu constructor.
+     *
+     * @param $app
      */
     public function __construct($app)
     {
@@ -23,13 +26,16 @@ class AdminMenu
     }
 
 
+    /**
+     * Render admin menu
+     *
+     * @return string
+     */
     public function render()
     {
-        if (empty($this->menu)) {
-            $this->menu = $this->modules->getAdminMenus();
-        }
+        $menu = new Menu($this->modules->getAdminMenus());
 
-        return (new Menu($this->menu, new Bootstrap()))->setLabelAttribute('label')->render();
+        return $menu->setLabelAttribute('label')->render();
     }
 
 }
