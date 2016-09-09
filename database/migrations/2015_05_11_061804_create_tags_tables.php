@@ -12,19 +12,17 @@ class CreateTagsTables extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tags', function(Blueprint $table) {
-			$table->increments('id');
-			$table->string('slug', 60)->index();
-			$table->string('name', 60);
-			$table->boolean('suggest')->default(false);
-			$table->integer('count')->unsigned()->default(0); // count of how many times this tag was used
-		});
-		Schema::create('tagged_items', function(Blueprint $table) {
-			$table->increments('id');
-			$table->morphs('taggable');
-			$table->integer('tag_id')->unsigned()->index();
-			$table->string('tag_name', 60);
-			$table->string('tag_slug', 60)->index();
+        Schema::create('tags', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('slug', 60)->index();
+            $table->string('name', 60);
+            $table->integer('count')->unsigned()->default(0); // count of how many times this tag was used
+        });
+
+        Schema::create('tagged_items', function (Blueprint $table) {
+            $table->increments('id');
+            $table->morphs('taggable');
+            $table->integer('tag_id')->unsigned()->index();
 		});
 
 	}
