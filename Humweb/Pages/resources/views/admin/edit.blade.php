@@ -96,34 +96,34 @@
     {!! Form::close() !!}
 
 
-        <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
-        <script src="{{ asset('js/ace/ace.js') }}"></script>
-        <script src="{{ asset('js/ace/mode-javascript.js') }}"></script>
-        <script src="{{ asset('js/ace/mode-css.js') }}"></script>
-        <script src="{{ asset('js/ace/theme-tomorrow_night.js') }}"></script>
+    <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('js/ace/ace.js') }}"></script>
+    <script src="{{ asset('js/ace/mode-javascript.js') }}"></script>
+    <script src="{{ asset('js/ace/mode-css.js') }}"></script>
+    <script src="{{ asset('js/ace/theme-tomorrow_night.js') }}"></script>
 
-        <script type="text/javascript">
-            $(function () {
-                $('.js_editor').ace({height: 300, width: '100%', theme: 'tomorrow_night', lang: 'javascript'});
-                $('.css_editor').ace({height: 300, width: '100%', theme: 'tomorrow_night', lang: 'css'});
-                $('#slug').on('change', function (e) {
-                    $('#slug_uri').text(this.value);
-                }).trigger('change');
-                $('#title').slugify();
-            });
-        </script>
-        @endsection
+    <script type="text/javascript">
+        $(function () {
+            $('.js_editor').ace({height: 300, width: '100%', theme: 'tomorrow_night', lang: 'javascript'});
+            $('.css_editor').ace({height: 300, width: '100%', theme: 'tomorrow_night', lang: 'css'});
+            $('#slug').on('change', function (e) {
+                $('#slug_uri').text(this.value);
+            }).trigger('change');
+            $('#title').slugify();
+        });
+    </script>
+@endsection
 
-        @section('style')
-            <style>
-                .tab-pane {
-                    padding: 25px 0;
-                }
+@section('style')
+    <style>
+        .tab-pane {
+            padding: 25px 0;
+        }
 
-                .css_editr, .js_editor {
-                    position: relative;
-                    height: 300px;
-                    font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
-                }
-            </style>
+        .css_editr, .js_editor {
+            position: relative;
+            height: 300px;
+            font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
+        }
+    </style>
 @endsection
