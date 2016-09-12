@@ -61,7 +61,7 @@ class SiteSeeder extends Seeder
             ]);
 
             $userGroup = Group::create([
-                'name' => 'User',
+                'title' => 'User',
                 'slug' => 'user'
             ]);
 
@@ -69,6 +69,30 @@ class SiteSeeder extends Seeder
             $adminUser->groups()->save($adminGroup);
             $basicUser->groups()->save($userGroup);
         });
+
+        $this->_output = $output = $this->command->getOutput();
+        $output->title('Starting Database Seed');
+
+
+        //---------------- Create Account -------------
+        $output->note('Creating content groups and pages.');
+
+//
+//        DB::table('content_groups')->insert([
+//            ['title' => 'Web', 'slug' => 'web', 'position' => 0, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+//            ['title' => 'Database', 'slug' => 'database', 'position' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+//            ['title' => 'Services', 'slug' => 'services', 'position' => 2, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+//        ]);
+
+        DB::table('posts')->insert([
+        ['category_id' => 1, 'title' => 'Nginx', 'slug' => 'nginx', 'content_html' => '', 'user_id' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+        ['category_id' => 1, 'title' => 'Workers', 'slug' => 'workers', 'content_html' => '', 'user_id' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+        ['category_id' => 1, 'title' => 'CDN', 'slug' => 'cdn', 'content_html' => '', 'user_id' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+        ['category_id' => 1, 'title' => 'Cache', 'slug' => 'cache', 'content_html' => '', 'user_id' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+        ['category_id' => 2, 'title' => 'Mysql', 'slug' => 'mysql', 'content_html' => '', 'user_id' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+        ['category_id' => 2, 'title' => 'Postgres', 'slug' => 'postgres', 'content_html' => '', 'user_id' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+        ['category_id' => 2, 'title' => 'Redis', 'slug' => 'redis', 'content_html' => '', 'user_id' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+    ]);
 
     }
 

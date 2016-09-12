@@ -1,8 +1,8 @@
 <?php namespace Humweb\Blog\Requests;
 
-use Humweb\Http\Requests\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePostRequest extends Request {
+class UpdatePostRequest extends FormRequest {
 
 	/**
 	 * Determine if the user is authorized to make this request.

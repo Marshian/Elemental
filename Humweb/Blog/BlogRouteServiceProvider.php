@@ -14,17 +14,8 @@ class BlogRouteServiceProvider extends RouteServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Humweb\Blog\Controllers';
+    protected $namespace = 'Humweb\Blog\Http\Controllers';
 
-    /**
-     * Define your route model bindings, pattern filters, etc.
-     *
-     * @param \Illuminate\Routing\Router $router
-     */
-    public function boot(Router $router)
-    {
-        parent::boot($router);
-    }
 
     /**
      * Define the routes for the application.
@@ -34,7 +25,7 @@ class BlogRouteServiceProvider extends RouteServiceProvider
     public function map(Router $router)
     {
         $router->group(['namespace' => $this->namespace, 'middleware' => 'web'], function ($router) {
-            require app_path('Blog/routes.php');
+            require base_path('Humweb/Blog/Http/Routes/posts.php');
         });
     }
 }

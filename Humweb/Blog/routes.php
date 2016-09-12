@@ -13,12 +13,12 @@ Route::get('posts/show/{id}', [
 
 Route::get('posts/create', [
     'as' => 'get.blog.posts.create',
-    'uses' => 'PostController@getCreate'
+    'uses' => 'AdminPostController@getCreate'
 ]);
 
 Route::post('posts/create', [
     'as' => 'post.blog.posts.create',
-    'uses' => 'PostController@postCreate'
+    'uses' => 'AdminPostController@postCreate'
 ]);
 
 // Post : Update
@@ -28,11 +28,11 @@ Route::get('posts/update/{id}', [
 ]);
 Route::post('posts/update/{id}', [
     'as' => 'post.blog.posts.update',
-    'uses' => 'PostController@postUpdate'
+    'uses' => 'AdminPostController@postUpdate'
 ]);
 
 //Delete
 Route::get('posts/delete/{id}', [
     'as' => 'get.blog.posts.delete',
-    'uses' => 'PostController@getDelete'
+    'uses' => 'AdminPostController@getDelete'
 ]);

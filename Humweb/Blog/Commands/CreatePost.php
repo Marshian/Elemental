@@ -2,18 +2,18 @@
 
 namespace Humweb\Blog\Commands;
 
+use Humweb\Blog\Commands\Traits\PersistentCommand;
+use Humweb\Blog\Events\PostWasCreated;
+use Humweb\Blog\Models\Post;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Humweb\Blog\Commands\Traits\PersistentCommand;
-use Humweb\Blog\Events\PageWasCreated;
-use Humweb\Blog\Models\Page;
 
 /**
- * CreatePage
+ * CreatePost
  *
  * @package Humweb\Blog\Commands
  */
-class CreatePost implements SelfHandling
+class CreatePost
 {
     use PersistentCommand, ValidatesRequests;
 
@@ -23,14 +23,9 @@ class CreatePost implements SelfHandling
      * @var string[]
      */
     public $rules = [
-        'name'        => 'required|string',
-        'description' => 'string|max:255',
-        'content'     => 'string',
-        'status'      => 'int|min:1|max:4',
-        'position'    => 'int',
-        'group_id'    => 'int',
-        'user_id'     => 'int|required',
-        'is_enabled'  => 'bool'
+        'title'        => 'required',
+        //        'slug'         => 'required',
+        'content_html' => 'required',
     ];
 
 
@@ -41,30 +36,30 @@ class CreatePost implements SelfHandling
     public function handle()
     {
         $request = $this->data();
-
         // Massage data
         $data = [
-            'name'        => $request->get('name', ''),
-            'description' => $request->get('description', ''),
-            'content'     => $request->get('content', ''),
-            'user_id'     => $this->getUserId(),
-            'group_id'    => $request->get('group_id', 0),
-            'status'      => $request->get('status', 1),
-            'position'    => $request->get('position', 0),
+            'title'            => $request->get('title', ''),
+            'slug'             => $request->get('description', ''),
+            'content_html'     => $request->get('content_html', ''),
+            'category_id'      => $request->get('category_id', 1),
+            'created_by'       => $this->getUserId(),
+            'status'           => $request->get('status', 1),
+            'meta_title'       => $request->get('meta_title', ''),
+            'meta_description' => $request->get('meta_description', ''),
+            'published_at'     => $request->get('published_at'),
         ];
-        
 
         // Validate
+
         $request->merge($data);
         $this->validate($request, $this->rules);
 
-        // Create page
-        $page = Page::create($data);
-
+        // Create post
+        $post = Post::create($data);
         // Trigger event
-        event(new PageWasCreated($page));
+        event(new PostWasCreated($post));
 
-        return $page;
+        return $post;
     }
 
 }

@@ -5,7 +5,7 @@ namespace Humweb\Blog\Commands\Traits;
 use Illuminate\Http\Request;
 
 /**
- * CreatePage
+ * CreatePost
  *
  * @package Humweb\Blog\Commands
  */

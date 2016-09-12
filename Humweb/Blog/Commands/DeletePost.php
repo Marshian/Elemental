@@ -6,15 +6,15 @@ use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Humweb\Blog\Commands\Traits\PersistentCommand;
-use Humweb\Blog\Events\PageWasDeleted;
-use Humweb\Blog\Models\Page;
+use Humweb\Blog\Events\PostWasDeleted;
+use Humweb\Blog\Models\Post;
 
 /**
- * CreatePage
+ * CreatePost
  *
  * @package Humweb\Blog\Commands
  */
-class DeletePage implements SelfHandling
+class DeletePost
 {
     use PersistentCommand, ValidatesRequests;
 
@@ -52,19 +52,19 @@ class DeletePage implements SelfHandling
     public function handle()
     {
 
-        // Delete page
-        $page = Page::find($this->id);
+        // Delete post
+        $post = Post::find($this->id);
 
-        if (is_null($page)) {
+        if (is_null($post)) {
             return false;
         }
 
-        $page->delete();
+        $post->delete();
 
         // Trigger event
-        event(new PageWasDeleted($page));
+        event(new PostWasDeleted($post));
 
-        return $page;
+        return $post;
     }
 
 }

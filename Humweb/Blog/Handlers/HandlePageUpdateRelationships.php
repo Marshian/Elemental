@@ -1,22 +1,22 @@
 <?php
 
-namespace LGL\Core\Content\Handlers;
+namespace Humweb\Blog\Handlers;
 
 use Illuminate\Http\Request;
-use LGL\Core\Content\Models\Page;
+use Humweb\Blog\Models\Post;
 
 /**
- * HandlePageMediaUploads
+ * HandlePostMediaUploads
  *
- * @package LGL\Core\Content\Handlers
+ * @package Humweb\Blog\Handlers
  */
-class HandlePageUpdateRelationships
+class HandlePostUpdateRelationships
 {
     protected $request;
 
 
     /**
-     * HandlePageMediaUploads constructor.
+     * HandlePostMediaUploads constructor.
      *
      * @param \Illuminate\Http\Request $request
      */
@@ -34,11 +34,11 @@ class HandlePageUpdateRelationships
     {
         // Attach file
         $related = $this->request->get('related');
-        if (count($related) && $pages = Page::select('id')->whereIn('id', $related)->get()) {
-            $event->page->syncRelated(collect($pages));
+        if (count($related) && $posts = Post::select('id')->whereIn('id', $related)->get()) {
+            $event->post->syncRelated(collect($posts));
         }
         else {
-            $event->page->syncRelated([]);
+            $event->post->syncRelated([]);
         }
     }
 }

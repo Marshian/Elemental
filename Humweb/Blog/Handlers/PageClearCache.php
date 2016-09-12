@@ -1,10 +1,10 @@
 <?php
 
-namespace LGL\Core\Content\Handlers;
+namespace Humweb\Blog\Handlers;
 
 use Illuminate\Contracts\Cache\Repository as CacheContract;
 
-class PageClearCache
+class PostClearCache
 {
     protected $cache;
 

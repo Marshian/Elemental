@@ -58,8 +58,7 @@ class ServiceProvider extends ModuleBaseProvider
      */
     public function register()
     {
-        $postManager = new PostManager($this->app, 'Humweb\Blog\Contracts\Repositories\PostRepositoryContract');
-        $postManager->bindRepository();
+
     }
 
     public function getAdminMenu()
@@ -68,11 +67,11 @@ class ServiceProvider extends ModuleBaseProvider
             'Content' => [
                 [
                     'label'    => 'Posts',
-                    'url'      => route('get.blog.posts'),
+                    'url'      => route('get.admin.blog.posts'),
                     'icon'     => '<i class="fa fa-book" ></i>',
                     'children' => [
-                        ['label' => 'List', 'url' => route('get.blog.posts')],
-                        ['label' => 'Create', 'url' => route('get.blog.posts.create')],
+                        ['label' => 'List', 'url' => route('get.admin.blog.posts')],
+                        ['label' => 'Create', 'url' => route('get.admin.blog.posts.create')],
                     ],
                 ],
             ],

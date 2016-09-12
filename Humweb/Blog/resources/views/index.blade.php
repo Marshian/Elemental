@@ -1,23 +1,39 @@
 @section('content')
-    @foreach($posts as $post)
-        <div class="panel">
-            <div class="panel-heading">
-                <h4 class="panel-title"><a href="#">{{ $post->title }}</a></h4>
-            </div>
-            <div class="panel-body">
-                <p>{!! $post->content_html !!}</p>
-            </div>
-            <div class="panel-footer font-sub">
-                <small><i class="fa fa-calendar"></i> {{ $post->created_at->toFormattedDateString() }}</small>
-                <span class="pull-right"><i class="fa fa-comment"></i> &nbsp;Comment</span>
-            </div>
-        </div>
-    @endforeach
-    <div class="row">
-        <div class="col-md-6">
-            {!! $posts->render() !!}
-        </div>
-        <div class="col-md-6 text-right">
+    <div class="panel panel-default">
+        <div class="panel-heading">Pages</div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Slug</th>
+                    <th>Status</th>
+                    <th>Updated</th>
+                    <th>&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($posts as $post)
+                    <tr>
+                        <td>
+                            {{ $post->title }}
+                        </td>
+                        <td>
+                            {{ $post->slug }}
+                        </td>
+                        <td>{{ $post->statusText() }}</td>
+                        <td>{{ $post->updated_at->diffForHumans() }}</td>
+                        <td class="text-right">
+                            <div class="btn-group">
+                                <a href="{{ route('get.admin.blog.posts.update', $post->id) }}" class="btn btn-xs btn-primary" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ route('post.admin.blog.posts.remove', $post->id) }}" class="btn btn-xs btn-primary" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
+
 @endsection

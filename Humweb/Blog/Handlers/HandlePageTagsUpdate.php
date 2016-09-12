@@ -1,21 +1,21 @@
 <?php
 
-namespace LGL\Core\Content\Handlers;
+namespace Humweb\Blog\Handlers;
 
 use Illuminate\Http\Request;
 
 /**
- * HandlePageMediaUploads
+ * HandlePostMediaUploads
  *
- * @package LGL\Core\Content\Handlers
+ * @package Humweb\Blog\Handlers
  */
-class HandlePageTagsUpdate
+class HandlePostTagsUpdate
 {
     protected $request;
 
 
     /**
-     * HandlePageMediaUploads constructor.
+     * HandlePostMediaUploads constructor.
      *
      * @param \Illuminate\Http\Request $request
      */
@@ -34,7 +34,7 @@ class HandlePageTagsUpdate
         $tags = $this->request->get('tags');
 
         if (count($tags)) {
-            $event->page->retag($tags);
+            $event->post->retag($tags);
         }
     }
 }

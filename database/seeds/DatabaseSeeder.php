@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Humweb\Auth\Groups\Group;
 use Humweb\Auth\Permissions\PermissionsPresenter;
 use Humweb\Auth\Users\User;
@@ -120,6 +121,16 @@ class DatabaseSeeder extends Seeder {
             'meta_robots'      => '',
             'is_index'         => 1,
             'order'            => 1,
+        ]);
+
+        DB::table('posts')->insert([
+            ['category_id' => 1, 'title' => 'Nginx', 'slug' => 'nginx', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['category_id' => 1, 'title' => 'Workers', 'slug' => 'workers', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['category_id' => 1, 'title' => 'CDN', 'slug' => 'cdn', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['category_id' => 1, 'title' => 'Cache', 'slug' => 'cache', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['category_id' => 2, 'title' => 'Mysql', 'slug' => 'mysql', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['category_id' => 2, 'title' => 'Postgres', 'slug' => 'postgres', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['category_id' => 2, 'title' => 'Redis', 'slug' => 'redis', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
         ]);
     }
 
