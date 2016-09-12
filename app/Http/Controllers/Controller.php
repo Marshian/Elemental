@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Humweb\Auth\Users\User;
 use Humweb\Breadcrumbs\Breadcrumbs;
 use Humweb\Settings\Facades\Settings;
 use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 
 abstract class Controller extends BaseController
@@ -20,6 +19,7 @@ abstract class Controller extends BaseController
     protected $breadcrumbs;
     protected $currentUser;
     protected $settings;
+
 
     /**
      * Controller constructor.
@@ -47,6 +47,7 @@ abstract class Controller extends BaseController
         $this->crumb('Home', '/');
     }
 
+
     /**
      * Show the user profile.
      */
@@ -56,7 +57,7 @@ abstract class Controller extends BaseController
             $this->viewShare('breadcrumbs', $this->breadcrumbs);
         }
 
-        if (!is_null($this->layout)) {
+        if ( ! is_null($this->layout)) {
             if ($data instanceof Arrayable) {
                 $data = $data->toArray();
             }
@@ -66,6 +67,7 @@ abstract class Controller extends BaseController
 
         return view($view, $data);
     }
+
 
     /**
      * Set the layout used by the controller.
@@ -77,15 +79,17 @@ abstract class Controller extends BaseController
         $this->layout = is_string($name) ? view($name) : $name;
     }
 
+
     /**
      * Setup the layout used by the controller.
      */
     protected function setupLayout()
     {
-        if (!is_null($this->layout)) {
+        if ( ! is_null($this->layout) && ! is_object($this->layout)) {
             $this->layout = view($this->layout);
         }
     }
+
 
     /**
      * Setup the layout used by the controller.
@@ -95,10 +99,12 @@ abstract class Controller extends BaseController
         view()->share($key, $data);
     }
 
+
     public function setTitle($title)
     {
         $this->viewShare('title', $title);
     }
+
 
     /**
      * Add Breadcrumb.
@@ -110,7 +116,7 @@ abstract class Controller extends BaseController
      */
     protected function crumb($label, $link = null)
     {
-        if (!$this->breadcrumbs) {
+        if ( ! $this->breadcrumbs) {
             $this->breadcrumbs = new Breadcrumbs();
         }
 
@@ -119,13 +125,14 @@ abstract class Controller extends BaseController
         return $this;
     }
 
+
     public function callAction($method, $parameters)
     {
         $this->setupLayout();
 
         $response = call_user_func_array(array($this, $method), $parameters);
 
-        if (is_null($response) && !is_null($this->layout)) {
+        if (is_null($response) && ! is_null($this->layout)) {
             $response = $this->layout;
         }
 

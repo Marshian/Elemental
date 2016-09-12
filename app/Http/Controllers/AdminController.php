@@ -16,10 +16,10 @@ class AdminController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->currentUser = Auth::user();
+
         $this->menu = AdminMenu::getFacadeRoot();
 
         $this->crumb('Admin', '/');
-        view()->share('admin_menu', $this->menu->render());
+        $this->viewShare('admin_menu', $this->menu->render());
     }
 }
