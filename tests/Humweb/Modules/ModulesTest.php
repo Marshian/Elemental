@@ -1,18 +1,16 @@
 <?php
 
 use Humweb\Modules\ModuleBaseProvider;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 class ModulesTest extends TestCase
 {
+
     /**
      * @var ExampleServiceProvider
      */
     protected $provider;
 
-    protected function setUp()
+    public function setUp()
     {
         parent::setUp();
         $this->provider = new ExampleServiceProvider($this->app);

@@ -7,7 +7,9 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
      *
      * @var string
      */
-    protected $baseUrl = 'http://localhost';
+    protected $baseUrl    = 'http://localhost';
+    protected $runSeeders = false;
+
 
     /**
      * Creates the application.
@@ -19,11 +21,16 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
         $app = require __DIR__.'/../bootstrap/app.php';
 
         $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
         return $app;
     }
 
-    public function setUp(){
+
+    public function setUp()
+    {
         parent::setUp();
-        $this->app[Illuminate\Contracts\Console\Kernel::class]->call('db:seed');
+        if ($this->runSeeders) {
+            $this->app[Illuminate\Contracts\Console\Kernel::class]->call('db:seed');
+        }
     }
 }

@@ -3,10 +3,15 @@
 use Humweb\Core\Data\Relatable;
 use Humweb\Pages\Models\Page;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Collection;
 
 class HasRelatedContentTest extends TestCase
 {
+    use DatabaseMigrations;
+
+    protected $runSeeders = true;
+
     /** @test */
     function it_can_add_a_related_model_via_a_model_instance()
     {
@@ -174,7 +179,7 @@ class HasRelatedContentTest extends TestCase
     }
     protected function assertRelatedCollectionContains(Collection $collection, Model $related)
     {
-        $this->assertTrue($collection->contains(function ($key, Model $item) use ($related) {
+        $this->assertTrue($collection->contains(function ($item, $key) use ($related) {
             return $item->id === $related->id && get_class($item) === $related->getMorphClass();
         }));
     }

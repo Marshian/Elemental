@@ -8,6 +8,8 @@ class TagsTest extends TestCase
 {
     use DatabaseMigrations;
 
+    protected $runSeeders = true;
+
     /**
      * @test
      */

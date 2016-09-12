@@ -1,5 +1,6 @@
 <?php
 use Humweb\Pages\Models\Page;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 /**
  * SluggableTest
@@ -8,6 +9,9 @@ use Humweb\Pages\Models\Page;
  */
 class SluggableTraitTest extends TestCase
 {
+    use DatabaseMigrations;
+
+    protected $runSeeders = true;
 
     /**
      * @test
@@ -19,13 +23,15 @@ class SluggableTraitTest extends TestCase
         $this->assertEquals('this-is-a-test', $model->slug);
     }
 
+
     /**
      * @test
      */
     public function it_will_not_change_the_slug_when_the_source_field_is_not_changed()
     {
         $model = $this->createPageEntity('this is a test');
-        
+
+        $model->content = 'otherValue';
         $model->save();
 
         $this->assertEquals('this-is-a-test', $model->slug);
@@ -146,27 +152,26 @@ class SluggableTraitTest extends TestCase
         $this->assertEquals('this-is-an-other-1', $model->slug);
     }
 
-    protected function createPageEntity($name)
-    {
+
+    protected function createPageEntity($name) {
         return Page::create([
-            'uri'         => $name,
-            'title'       => $name,
-            'user_id'     => 1,
-            'status'      => true,
-            'order'    => 0,
-            'content'     => '',
+            'uri' => $name,
+            'title' => $name,
+            'content' => '',
+            'user_id' => 1,
+            'status' => true,
+            'order' => 0,
         ]);
     }
 
-    protected function createEntityArray($name)
-    {
+    protected function createEntityArray($name) {
         return [
-            'uri'         => $name,
-            'title'       => $name,
-            'user_id'     => 1,
-            'status'      => true,
-            'order'    => 0,
-            'content'     => '',
+            'title' => $name,
+            'uri' => $name,
+            'content' => '',
+            'user_id' => 1,
+            'status' => true,
+            'order' => 0,
         ];
     }
 }

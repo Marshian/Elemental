@@ -6,6 +6,10 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ExampleTest extends TestCase
 {
+    use DatabaseMigrations;
+
+    protected $runSeeders = true;
+
     /**
      * A basic functional test example.
      *
