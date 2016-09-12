@@ -35,6 +35,12 @@ class Page extends \Eloquent
         'order',
     ];
 
+    protected $attributes = [
+        'created_by' => 0,
+        'parent_id' => 0,
+        'published' => false,
+    ];
+
     public $rules = [
         'title'     => 'required|min:3|unique:pages,title',
         'slug'      => 'required_with:title|min:3|alpha_dash|unique:pages,slug',
