@@ -12,7 +12,6 @@ use Illuminate\Database\Eloquent\Model;
 
 trait SluggableTrait
 {
-
     protected $slugOptions = [
         'maxlen'     => 200,
         'unique'     => true,
@@ -126,7 +125,7 @@ trait SluggableTrait
         } else {
             $slugSourceString = $this->getAttribute($this->slugOptions['from_field']);
         }
-        
+
         return substr($slugSourceString, 0, $this->slugOptions['maxlen']);
     }
 
