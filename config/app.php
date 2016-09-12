@@ -120,7 +120,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
@@ -187,6 +187,8 @@ return [
         Humweb\Menus\MenusRouteServiceProvider::class,
         Humweb\Settings\SettingsRouteServiceProvider::class,
         Humweb\Pages\ServiceProvider::class,
+        Humweb\Blog\ServiceProvider::class,
+        Humweb\Blog\BlogRouteServiceProvider::class,
         Humweb\Pages\PagesRouteServiceProvider::class,
         Humweb\Categories\Http\CategoriesRouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
