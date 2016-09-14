@@ -25,4 +25,4 @@ php artisan key:generate
 php artisan config:cache
 
 # Run database migrations.
-php artisan migrate
+#php artisan migrate
