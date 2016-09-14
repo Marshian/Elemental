@@ -6,7 +6,7 @@ cache:
 
 before_script:
 # Install dependencies
-- apt-get install git
+- apt-get install git-core
 - "[ ! -f \"vendor/composer.phar\" ] && php -r \"readfile('https://getcomposer.org/installer');\" > composer-setup.php && php composer-setup.php && mkdir -p vendor && mv composer.phar vendor/composer.phar && rm composer-setup.php"
 - php vendor/composer.phar install --prefer-source --no-interaction --dev
 - bash ci/docker_install.sh > /dev/null
