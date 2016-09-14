@@ -91,7 +91,7 @@ class BlogApiTest extends TestCase
         $user = User::find(1);
 
         $this->actingAs($user)->expectsEvents(PostWasCreated::class)->post('/api/blog/posts', [
-            'title'        => 'Mail',
+            'title'        => 'Blog title new',
             'content_html' => 'Body content.',
             'category_id'  => 1,
             'status'       => 1
@@ -101,8 +101,8 @@ class BlogApiTest extends TestCase
         ]);
 
         $this->seeInDatabase('posts', [
-            'title'        => 'Mail',
-            'slug'         => 'mail',
+            'title'        => 'Blog title new',
+            'slug'         => 'blog-title-new',
             'content_html' => 'Body content.',
             'category_id'  => 1,
             'status'       => 1
@@ -116,8 +116,8 @@ class BlogApiTest extends TestCase
     function it_can_update_posts()
     {
         $this->seeInDatabase('posts', [
-            'title'       => 'Nginx',
-            'slug'        => 'nginx',
+            'title'       => 'Blog title 1',
+            'slug'        => 'blog-title-1',
             'category_id' => 1,
             'status'      => 1
         ]);
@@ -125,7 +125,7 @@ class BlogApiTest extends TestCase
         $user = User::find(1);
 
         $this->actingAs($user)->expectsEvents(PostWasUpdated::class)->post('/api/blog/posts/1', [
-            'title'       => 'NginxWeb',
+            'title'       => 'Blog title 1',
             'content_html' => 'Frontend web servers.'
         ])->seeJson([
             'status'  => true,
@@ -151,7 +151,7 @@ class BlogApiTest extends TestCase
         ]);
 
         $this->seeInDatabase('posts', [
-            'title'       => 'NginxWeb',
+            'title'       => 'Blog title 1',
             'content_html' => 'Frontend web servers.'
         ]);
     }
@@ -164,8 +164,8 @@ class BlogApiTest extends TestCase
     {
         $this->seeInDatabase('posts', [
             'id'          => 1,
-            'title'       => 'Nginx',
-            'slug'        => 'nginx',
+            'title'       => 'Blog title 1',
+            'slug'        => 'blog-title-1',
             'category_id' => 1,
             'status'      => 1,
             'deleted_at'  => null
@@ -180,7 +180,7 @@ class BlogApiTest extends TestCase
 
         $this->notSeeInDatabase('posts', [
             'id'         => 1,
-            'title'      => 'Nginx',
+            'title'      => 'Blog title 1',
             'deleted_at' => null
         ]);
     }

@@ -4,40 +4,36 @@ use Carbon\Carbon;
 use Humweb\Auth\Groups\Group;
 use Humweb\Auth\Permissions\PermissionsPresenter;
 use Humweb\Auth\Users\User;
-use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class DatabaseSeeder extends Seeder {
+class DatabaseSeeder extends Seeder
+{
 
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
-	public function run()
-	{
-		Model::unguard();
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Model::unguard();
 
-        $_this = $this;
-
-        DB::transaction(function () use ($_this)
-        {
+        DB::transaction(function () {
 
             $presenter = new PermissionsPresenter(app('config'), app('modules'));
 
             $permissions = [];
-            foreach ($presenter->getPermissions() as $section)
-            {
-                foreach($section as $perm => $meta)
-                {
+            foreach ($presenter->getPermissions() as $section) {
+                foreach ($section as $perm => $meta) {
                     $permissions[$perm] = 1;
                 }
             }
 
             // Users
-            $adminUser = $_this->makeUser([
+            $adminUser = $this->makeUser([
                 'first_name'  => 'Joe',
                 'last_name'   => 'BobAdmin',
                 'email'       => 'admin@user.com',
@@ -45,7 +41,7 @@ class DatabaseSeeder extends Seeder {
                 'permissions' => [],
             ]);
 
-            $basicUser = $_this->makeUser([
+            $basicUser = $this->makeUser([
                 'first_name'  => 'John',
                 'last_name'   => 'DoeUser',
                 'email'       => 'user@user.com',
@@ -70,7 +66,49 @@ class DatabaseSeeder extends Seeder {
             $basicUser->groups()->save($userGroup);
         });
 
+        $this->seedPagesTable();
 
+        $this->seedPostsTable();
+    }
+
+
+    private function makeUser($data)
+    {
+        $data['password'] = Hash::make($data['password']);
+
+        return User::create($data);
+    }
+
+
+    protected function seedPostsTable()
+    {
+        DB::table('posts')->insert([
+            [
+                'category_id'  => 1,
+                'title'        => 'Blog title 1',
+                'slug'         => 'blog-title-1',
+                'content_html' => '',
+                'created_by'   => 1,
+                'status'       => 1,
+                'created_at'   => Carbon::now(),
+                'updated_at'   => Carbon::now()
+            ],
+            [
+                'category_id'  => 1,
+                'title'        => 'Blog title 2',
+                'slug'         => 'blog-title-2',
+                'content_html' => '',
+                'created_by'   => 1,
+                'status'       => 1,
+                'created_at'   => Carbon::now(),
+                'updated_at'   => Carbon::now()
+            ]
+        ]);
+    }
+
+
+    protected function seedPagesTable()
+    {
         DB::table('pages')->insert([
             'created_by'       => 1,
             'slug'             => Str::slug('Test title'),
@@ -122,23 +160,6 @@ class DatabaseSeeder extends Seeder {
             'is_index'         => 1,
             'order'            => 1,
         ]);
-
-        DB::table('posts')->insert([
-            ['category_id' => 1, 'title' => 'Nginx', 'slug' => 'nginx', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['category_id' => 1, 'title' => 'Workers', 'slug' => 'workers', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['category_id' => 1, 'title' => 'CDN', 'slug' => 'cdn', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['category_id' => 1, 'title' => 'Cache', 'slug' => 'cache', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['category_id' => 2, 'title' => 'Mysql', 'slug' => 'mysql', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['category_id' => 2, 'title' => 'Postgres', 'slug' => 'postgres', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['category_id' => 2, 'title' => 'Redis', 'slug' => 'redis', 'content_html' => '', 'created_by' => 1, 'status' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
-        ]);
     }
-
-    private function makeUser($data)
-    {
-        $data['password'] = Hash::make($data['password']);
-
-        return User::create($data);
-	}
 
 }

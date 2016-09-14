@@ -38,14 +38,14 @@ class PostsFunctionalTest extends TestCase
 
             // Create post
             ->expectsEvents(PostWasCreated::class)
-            ->type('Mail', 'title')
+            ->type('Blog Title New', 'title')
             ->type('Test content.', 'content_html')
             ->press('Create')
             ->see('Post created.')
 
             // Verify it's being listed
             ->visit('admin/blog')
-            ->see('Mail');
+            ->see('Blog Title New');
     }
 
     /**
@@ -60,15 +60,15 @@ class PostsFunctionalTest extends TestCase
             ->see('Update Blog Post')
 
             // Sanity check
-            ->see('Nginx')
-            ->see('WebServices', true)
+            ->see('Blog title 1')
+            ->see('Blog title example update', true)
 
             // Update post
             ->expectsEvents(PostWasUpdated::class)
-            ->type('WebServices', 'title')
+            ->type('Blog title example update', 'title')
             ->press('Save')
             ->see('Post updated.')
-            ->see('WebServices');
+            ->see('Blog title example update');
     }
 
     /**
@@ -80,13 +80,13 @@ class PostsFunctionalTest extends TestCase
 
         $this->actingAs($user)
             ->visit('admin/blog')
-            ->see('Workers')
+            ->see('Blog title 2')
 
             // Sanity check
             ->expectsEvents(PostWasDeleted::class)
             ->visit('/admin/blog/posts/remove/2')
             ->seePageIs('admin/blog')
-            ->see('Workers', true);
+            ->see('Blog title 2', true);
     }
 
 }
