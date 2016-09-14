@@ -1,8 +1,13 @@
 # Select image from https://hub.docker.com/r/_/php/
 image: php:5.6
+cache:
+  paths:
+    - vendor
 
 before_script:
 # Install dependencies
+- "[ ! -f \"vendor/composer.phar\" ] && php -r \"readfile('https://getcomposer.org/installer');\" > composer-setup.php && php composer-setup.php && mkdir -p vendor && mv composer.phar vendor/composer.phar && rm composer-setup.php"
+- php vendor/composer.phar install --prefer-source --no-interaction --dev
 - bash ci/docker_install.sh > /dev/null
 
 test:app:
