@@ -11,4 +11,4 @@ cache:
 
 test:app:
   script:
-  - php vendor/bin/phpunit --colors
+  - php vendor/bin/phpunit --colors -c phpunit.xml
