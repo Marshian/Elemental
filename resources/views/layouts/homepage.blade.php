@@ -24,6 +24,7 @@
                 'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <script src="https://fareharbor.com/embeds/api/v1/"></script>
 </head>
 <body>
 @include('partials.frontend-navbar')
