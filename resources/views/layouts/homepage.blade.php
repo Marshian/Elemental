@@ -32,5 +32,11 @@
 
 <!-- Scripts -->
 <script src="/js/app.js"></script>
+<script>
+
+    $(function() {
+
+    });
+</script>
 </body>
 </html>
