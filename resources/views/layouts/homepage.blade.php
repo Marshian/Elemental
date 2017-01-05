@@ -24,7 +24,6 @@
                 'csrfToken' => csrf_token(),
         ]); ?>
     </script>
-    <script src="https://fareharbor.com/embeds/api/v1/"></script>
 </head>
 <body>
 @include('partials.frontend-navbar')
@@ -33,10 +32,14 @@
 
 <!-- Scripts -->
 <script src="/js/app.js"></script>
+<script src="https://fareharbor.com/embeds/api/v1/"></script>
 <script>
-
     $(function() {
-
+        $('.fh-book-button').click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            FH.open({ shortname: 'darkstarmountaintours', view: 'all-availability', fullItems: 'yes' });
+        });
     });
 </script>
 </body>
