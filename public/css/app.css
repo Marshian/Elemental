@@ -3176,7 +3176,8 @@ tbody.collapse.in {
     height: 17px;
     z-index: 2; }
   .navbar-inverse.navbar-transparent {
-    background-color: rgba(0, 0, 0, 0.54);
+    color: #fff;
+    background-color: transparent;
     border-color: transparent; }
   .navbar-inverse .navbar-brand {
     color: #fff; }
@@ -3186,6 +3187,7 @@ tbody.collapse.in {
   .navbar-inverse .navbar-text {
     color: #fff; }
   .navbar-inverse .navbar-nav > li > a {
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.38);
     color: #fff; }
     .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
       color: #fff;
@@ -5018,7 +5020,10 @@ button.close {
 .section {
   margin-top: -90px;
   height: 770px;
-  background: url(/img/bg/bg6.jpg) no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(/img/bg/bg.jpg);
+  background-attachment: fixed;
   background-size: cover; }
   .section:after {
     bottom: -2px;

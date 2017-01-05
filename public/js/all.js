@@ -3944,163 +3944,6 @@ var char_map = {
 
 	return Selectize;
 }));
-$(function(){
-
-	/**
-	 * Basic Select
-	 */
-
-   var $selects = $('.select'),
-      $inputTags = $('.input-tags');
-
-   if ($selects.length)
-   {
-      $('.select').not('.input-tags, .select-emails').selectize({
-         sortField: 'text'
-      }
-      );
-   }
-
-	/**
-	 * Tags input
-	 */
-   if ($inputTags.length)
-   {
-      $('.input-tags').selectize({
-         plugins: ['remove_button'],
-         delimiter: ',',
-         persist: false,
-         create: function (input) {
-            return {
-               value: input,
-               text: input
-            }
-         }
-      }
-      );
-   }
-
-   $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      $(this).parent().siblings().removeClass('open');
-      $(this).parent().toggleClass('open');
-   });
-   //
-	///**
-	// * Email Selector
-	// */
-	//var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@' +
-	//                  '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
-   //
-	//$('.select-emails').selectize({
-	//    persist: false,
-	//    maxItems: null,
-	//    valueField: 'email',
-	//    labelField: 'name',
-	//    searchField: ['name', 'email'],
-	//    options: [],
-	//    render: {
-	//        item: function(item, escape) {
-	//            return '<div>' +
-	//                (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') +
-	//                (item.email ? '<span class="email">' + escape(item.email) + '</span>' : '') +
-	//            '</div>';
-	//        },
-	//        option: function(item, escape) {
-	//            var label = item.name || item.email;
-	//            var caption = item.name ? item.email : null;
-	//            return '<div>' +
-	//                '<span class="label">' + escape(label) + '</span>' +
-	//                (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
-	//            '</div>';
-	//        }
-	//    },
-	//    create: function(input) {
-	//        if ((new RegExp('^' + REGEX_EMAIL + '$', 'i')).test(input)) {
-	//            return {email: input};
-	//        }
-	//        var match = input.match(new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i'));
-	//        if (match) {
-	//            return {
-	//                email : match[2],
-	//                name  : $.trim(match[1])
-	//            };
-	//        }
-	//        alert('Invalid email address.');
-	//        return false;
-	//    }
-	//});
-
-});
-$(function(){
-   /**
-    * Modals
-    *
-    * @show .modal('show')
-    */
-   $modalGlobal = $('#globalModal');
-
-   $(document)
-      .on('click', '.modal-iframe', function(e){
-
-         var $this = $(this),
-             src = $this.attr('href'),
-             height = $this.attr('data-height') || 300,
-             width = $this.attr('data-width') || '100%';
-
-         $modalGlobal.find('iframe').attr({'src':src, 'height': height, 'width': width}).end().modal('show');
-
-         e.preventDefault();
-      })
-      .tooltip({ selector: "[data-toggle=tooltip], .tips" });
-
-   // cleanup the content of the hidden remote modal because it is cached
-   $modalGlobal.on('hide.bs.modal', function (e) {
-      $(this).find('iframe').attr({'src':''});
-   });
-
-
-	/* Tooltips */
-    //$('.container').tooltip({
-    //  selector: "[data-toggle=tooltip], .tips"
-    //});
-
-   // Popovers
-   $('[data-toggle="popover"]').popover({ 
-        html: true,
-        conatiner: 'body',
-        content: function() {
-          return $($(this).data('target')).html();
-        }
-    });
-
-
-   $('.navbar [title]').tooltip({
-      placement: 'bottom',
-      template: '<div class="tooltip" role="tooltip"><div class="tooltip-inner align-left"></div></div>'
-   });
-
-   /* Serialize form */
-   $.fn.serializeForm = function(d)
-   {
-
-      var o = {};
-      var a = this.serializeArray();
-
-      $.each(a, function() {
-         if (o[this.name] !== undefined) {
-            if (!o[this.name].push) {
-               o[this.name] = [o[this.name]];
-            }
-            o[this.name].push(this.value || '');
-         } else {
-            o[this.name] = this.value || '';
-         }
-      });
-      return o;
-   };
-});
 /* ========================================================================
  * Bootstrap: tooltip.js v3.3.4
  * http://getbootstrap.com/javascript/#tooltip
@@ -6402,4 +6245,161 @@ $(function(){
   })
 
 }(jQuery);
+$(function(){
+
+	/**
+	 * Basic Select
+	 */
+
+   var $selects = $('.select'),
+      $inputTags = $('.input-tags');
+
+   if ($selects.length)
+   {
+      $('.select').not('.input-tags, .select-emails').selectize({
+         sortField: 'text'
+      }
+      );
+   }
+
+	/**
+	 * Tags input
+	 */
+   if ($inputTags.length)
+   {
+      $('.input-tags').selectize({
+         plugins: ['remove_button'],
+         delimiter: ',',
+         persist: false,
+         create: function (input) {
+            return {
+               value: input,
+               text: input
+            }
+         }
+      }
+      );
+   }
+
+   $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this).parent().siblings().removeClass('open');
+      $(this).parent().toggleClass('open');
+   });
+   //
+	///**
+	// * Email Selector
+	// */
+	//var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@' +
+	//                  '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
+   //
+	//$('.select-emails').selectize({
+	//    persist: false,
+	//    maxItems: null,
+	//    valueField: 'email',
+	//    labelField: 'name',
+	//    searchField: ['name', 'email'],
+	//    options: [],
+	//    render: {
+	//        item: function(item, escape) {
+	//            return '<div>' +
+	//                (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') +
+	//                (item.email ? '<span class="email">' + escape(item.email) + '</span>' : '') +
+	//            '</div>';
+	//        },
+	//        option: function(item, escape) {
+	//            var label = item.name || item.email;
+	//            var caption = item.name ? item.email : null;
+	//            return '<div>' +
+	//                '<span class="label">' + escape(label) + '</span>' +
+	//                (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
+	//            '</div>';
+	//        }
+	//    },
+	//    create: function(input) {
+	//        if ((new RegExp('^' + REGEX_EMAIL + '$', 'i')).test(input)) {
+	//            return {email: input};
+	//        }
+	//        var match = input.match(new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i'));
+	//        if (match) {
+	//            return {
+	//                email : match[2],
+	//                name  : $.trim(match[1])
+	//            };
+	//        }
+	//        alert('Invalid email address.');
+	//        return false;
+	//    }
+	//});
+
+});
+$(function(){
+   /**
+    * Modals
+    *
+    * @show .modal('show')
+    */
+   $modalGlobal = $('#globalModal');
+
+   $(document)
+      .on('click', '.modal-iframe', function(e){
+
+         var $this = $(this),
+             src = $this.attr('href'),
+             height = $this.attr('data-height') || 300,
+             width = $this.attr('data-width') || '100%';
+
+         $modalGlobal.find('iframe').attr({'src':src, 'height': height, 'width': width}).end().modal('show');
+
+         e.preventDefault();
+      })
+      .tooltip({ selector: "[data-toggle=tooltip], .tips" });
+
+   // cleanup the content of the hidden remote modal because it is cached
+   $modalGlobal.on('hide.bs.modal', function (e) {
+      $(this).find('iframe').attr({'src':''});
+   });
+
+
+	/* Tooltips */
+    //$('.container').tooltip({
+    //  selector: "[data-toggle=tooltip], .tips"
+    //});
+
+   // Popovers
+   $('[data-toggle="popover"]').popover({ 
+        html: true,
+        conatiner: 'body',
+        content: function() {
+          return $($(this).data('target')).html();
+        }
+    });
+
+
+   $('.navbar [title]').tooltip({
+      placement: 'bottom',
+      template: '<div class="tooltip" role="tooltip"><div class="tooltip-inner align-left"></div></div>'
+   });
+
+   /* Serialize form */
+   $.fn.serializeForm = function(d)
+   {
+
+      var o = {};
+      var a = this.serializeArray();
+
+      $.each(a, function() {
+         if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+               o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+         } else {
+            o[this.name] = this.value || '';
+         }
+      });
+      return o;
+   };
+});
 //# sourceMappingURL=all.js.map
