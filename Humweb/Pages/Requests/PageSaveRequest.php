@@ -27,7 +27,7 @@ class PageSaveRequest extends FormRequest
         $rules = [
             'title'     => 'required',
             'slug'      => 'required',
-            'uri'       => 'required|unique:pages',
+            //'uri'       => 'required|unique:pages',
             'content'   => 'required',
             'published' => 'boolean',
             'is_index'  => 'boolean',
