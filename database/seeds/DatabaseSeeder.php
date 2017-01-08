@@ -122,7 +122,6 @@ class DatabaseSeeder extends Seeder
             'js'               => '',
             'meta_title'       => 'Test title',
             'meta_description' => '',
-            'meta_robots'      => '',
             'is_index'         => 1,
             'order'            => 1,
         ]);
@@ -139,7 +138,6 @@ class DatabaseSeeder extends Seeder
             'js'               => '',
             'meta_title'       => 'Test title 2',
             'meta_description' => '',
-            'meta_robots'      => '',
             'is_index'         => 1,
             'order'            => 1,
         ]);
@@ -156,7 +154,6 @@ class DatabaseSeeder extends Seeder
             'js'               => '',
             'meta_title'       => 'Test title 3',
             'meta_description' => '',
-            'meta_robots'      => '',
             'is_index'         => 1,
             'order'            => 1,
         ]);

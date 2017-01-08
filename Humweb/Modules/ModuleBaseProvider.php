@@ -59,7 +59,7 @@ class ModuleBaseProvider extends ServiceProvider
 
     public function getResourcePath()
     {
-        return $this->getBasePath().'/resources';
+        return $this->getBasePath().'/../resources';
     }
 
     public function getViewsPath()
@@ -70,6 +70,10 @@ class ModuleBaseProvider extends ServiceProvider
     public function getLangPath()
     {
         return $this->getResourcePath().'/lang';
+    }
+    public function getConfigPath()
+    {
+        return $this->getResourcePath().'/config';
     }
 
     public function loadViews()
@@ -82,6 +86,15 @@ class ModuleBaseProvider extends ServiceProvider
         $this->loadTranslationsFrom($this->getLangPath(), $this->moduleMeta['slug']);
     }
 
+    public function publishConfig()
+    {
+        $this->publishes([
+            $this->getConfigPath('courier') => config_path('courier.php'),
+        ]);
+        $this->publishes([
+            $this->getViewsPath() => base_path('resources/views/vendor/'.$this->moduleMeta['slug']),
+        ]);
+    }
     public function publishViews()
     {
         $this->publishes([

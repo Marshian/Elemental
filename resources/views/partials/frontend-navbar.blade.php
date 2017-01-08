@@ -14,32 +14,32 @@
                 {!! $menu or '' !!}
             </ul>
             @if(isset($admin_menu))
-            <ul class="nav navbar-nav">
-                {!! $admin_menu or '' !!}
-            </ul>
+                <ul class="nav navbar-nav">
+                    {!! $admin_menu or '' !!}
+                </ul>
             @endif
             <ul class="nav navbar-nav navbar-right">
-                <!-- Authentication Links -->
+                {{--Authentication Links--}}
                 @if (!Auth::guest())
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        {{ Auth::user()->getFullName() }} <span class="caret"></span>
-                    </a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->getFullName() }} <span class="caret"></span>
+                        </a>
 
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a href="{{ url('/logout') }}"
-                               onclick="event.preventDefault();
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ url('/logout') }}"
+                                   onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
+                                    Logout
+                                </a>
 
-                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                    </ul>
-                </li>
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                 @endif
             </ul>
         </div><!--/.nav-collapse -->

@@ -2,9 +2,10 @@
 
 namespace Humweb\Comments\Models;
 
-use Config;
+use Humweb\Auth\Users\User;
+use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Node
+class Comment extends Model
 {
 
     /**
@@ -45,68 +46,31 @@ class Comment extends Node
      */
     public function user()
     {
-        return $this->belongsTo('Humweb\Auth\Users\User');
-    }
-
-
-    /**
-     * Helper method to check if a comment has children.
-     *
-     * @return bool
-     */
-    public function hasChildren()
-    {
-        return $this->children()->count() > 0;
+        return $this->belongsTo(User::class);
     }
 
 
     public static function add($body, $user_id, $commentable)
     {
-        $comment = static::create(array(
+        $comment = static::create([
             'body'             => $body,
             'user_id'          => $user_id,
-            'commentable_id'   => $commentable->id,
+            'commentable_id'   => $commentable->getKey(),
             'commentable_type' => get_class($commentable),
-        ));
+        ]);
 
         return $comment;
     }
 
 
     /**
-     * Returns the validation rules for the comment.
-     *
-     * @param string $commentableType The namespaced model that is being commented on
-     *
-     * @return array
-     */
-    public function getRules($commentableType)
-    {
-        $commentableObj = new $commentableType();
-        $table = $commentableObj->getTable();
-        $key = $commentableObj->getKeyName();
-        $rules = array(
-            //'commentable_type' => 'required|in:'.implode(',', Config::get('laravel-comments::commentables')),
-            'commentable_type' => 'required',
-            'commentable_id'   => 'required|exists:'.$table.','.$key,
-            'body'             => 'required',
-        );
-
-        return $rules;
-    }
-
-
-    /**
-     * Returns the URL of the comment constructed based on the URL of the commentable object, plus the anchor of the
-     * comment.
-     *
-     * @return string
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      */
     public function getUrl()
     {
+        $url         = '';
         $commentable = $this->commentable;
 
-        $url = false;
         if (method_exists($commentable, 'getUrl')) {
             $url = $commentable->getUrl();
         }

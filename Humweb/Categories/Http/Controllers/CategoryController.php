@@ -47,7 +47,10 @@ class CategoryController extends Controller
         //        $types     = $this->manager->types;
         //        $current   = $this->manager->root->slug;
         // $this->buildHeading([trans('category.common.manage'), "[{$types[$current]}]"], 'fa-sitemap', ['#' => trans('category.common.category')]);
+
+        /** @var Baum\Node */
         $root = CategoryItem::find(1);
+
         //CategoryItem::rebuild(true);
         $tree = ! is_null($root) ? $root->getDescendantsAndSelf()->toHierarchy() : [];
 
@@ -68,36 +71,19 @@ class CategoryController extends Controller
     {
         $children_html = '';
         if ( ! $node->isLeaf()) {
-            $children_html = "\n<ol class=\"dd-list dd3-list\">\n";
+            $children_html = '\n<ol class="dd-list dd3-list">\n';
             foreach ($node->children as $child) {
                 $children_html .= $this->renderNode($child, $max_depth);
             }
             $children_html .= "</ol>\n";
         }
 
-        return <<<"LIST_ITEM"
-<li class="dd-item dd3-item nested-list-item" data-id="{$node->id}">
-    <div class="dd-handle dd3-handle">Handle</div>
-    <div class="dd3-content">
-        {$node->title}
-        <div class="actions nested-list-actions pull-right">
-        <ul class="list-inline">
-        <li><a href="#"><i class="fa fa-plus"></i></a></li>
-        <li><a href="#"><i class="fa fa-pencil"></i></a></li>
-        <li><a href="#"><i class="fa fa-trash"></i></a></li>
-        </ul>
-        </div>
-    </div>
-    $children_html
-</li>
-LIST_ITEM;
+        return '<li class="dd-item dd3-item nested-list-item" data-id="'.$node->id.'">'.'<div class="dd-handle dd3-handle">Handle</div>'.'<div class="dd3-content">'.$node->title.'<div class="actions nested-list-actions pull-right">'.'<ul class="list-inline">'.'<li><a href="#"><i class="fa fa-plus"></i></a></li>'.'<li><a href="#"><i class="fa fa-pencil"></i></a></li>'.'<li><a href="#"><i class="fa fa-trash"></i></a></li>'.'</ul></div></div>'.$children_html.'</li>';
     }
 
 
     /**
-     * Render html theo định dạng của jquery nestable plugin
-     *
-     * @see https://github.com/dbushell/Nestable
+     * Render nested list
      *
      * @param \Illuminate\Database\Eloquent\Collection|array $roots
      * @param int                                            $max_depth

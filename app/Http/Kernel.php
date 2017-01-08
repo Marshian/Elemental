@@ -51,8 +51,8 @@ class Kernel extends HttpKernel
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'allow.only' => \App\Http\Middleware\AllowOnly::class,
-        'allow.any' => \App\Http\Middleware\AllowAny::class,
+        'allow.only' => \Humweb\Auth\Http\Middleware\AllowOnly::class,
+        'allow.any' => \Humweb\Auth\Http\Middleware\AllowAny::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

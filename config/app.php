@@ -162,6 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -174,9 +175,12 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
+        //App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+
+        Humweb\ThemeManager\ServiceProvider::class,
+
+        Humweb\Core\Providers\RouteServiceProvider::class,
 
         Humweb\Modules\ModuleServiceProvider::class,
         Humweb\Html\HtmlServiceProvider::class,
@@ -186,13 +190,12 @@ return [
         Humweb\Menus\MenusServiceProvider::class,
         Humweb\Menus\MenusRouteServiceProvider::class,
         Humweb\Settings\SettingsRouteServiceProvider::class,
-        Humweb\Pages\ServiceProvider::class,
-        Humweb\Blog\ServiceProvider::class,
-        Humweb\Blog\BlogRouteServiceProvider::class,
-        Humweb\Pages\PagesRouteServiceProvider::class,
-        Humweb\Categories\Http\CategoriesRouteServiceProvider::class,
+//        Humweb\Blog\ServiceProvider::class,
+//        Humweb\Blog\BlogRouteServiceProvider::class,
+//        Humweb\Categories\Http\CategoriesRouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        Humweb\Pages\ServiceProvider::class,
+        Humweb\Pages\PagesRouteServiceProvider::class,
     ],
 
     /*

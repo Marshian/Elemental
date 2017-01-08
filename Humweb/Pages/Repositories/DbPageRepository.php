@@ -11,6 +11,7 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
 {
     protected $model = 'Humweb\\Pages\\Models\\Page';
 
+
     /**
      * Get index page.
      *
@@ -21,6 +22,7 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
         return $this->createModel()->where('is_index', '=', '1')->first();
     }
 
+
     /**
      * Get page by URI string.
      *
@@ -30,11 +32,9 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
      */
     public function getByUri($uri)
     {
-        return  $this->createModel()->with(['tagged'])
-                     ->published()
-                     ->uri($uri)
-                     ->first();
+        return $this->createModel()->with(['tagged'])->published()->uri($uri)->first();
     }
+
 
     /**
      * Returns a ordered tree array of pages.
@@ -43,11 +43,8 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
      */
     public function tree()
     {
-        $pages = [];
-        $pageList = $this->createModel()
-            ->select('id', 'parent_id', 'slug', 'uri', 'title', 'published')
-            ->orderBy('order')
-            ->get()->toArray();
+        $pages    = [];
+        $pageList = $this->createModel()->select('id', 'parent_id', 'slug', 'uri', 'title', 'published')->orderBy('order')->get()->toArray();
 
         // First, re-index the array.
         foreach ($pageList as $row) {
@@ -58,7 +55,7 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
 
         // Build a multidimensional array of parent > children.
         foreach ($pages as $row) {
-            if (array_key_exists($row['parent_id'], $pages)) {
+            if (isset($pages[$row['parent_id']])) {
                 // Add this page to the children array of the parent page.
                 $pageList[$row['parent_id']]['children'][$row['id']] = $pages[$row['id']];
             }
@@ -118,6 +115,7 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
         $this->updatePageUriIndex($root_ids);
     }
 
+
     /**
      * Set the parent > child relations and child order.
      *
@@ -127,9 +125,7 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
     {
         if (isset($page['children'])) {
             foreach ($page['children'] as $i => $child) {
-                $this->createModel()
-                    ->where('id', '=', $child['id'])
-                    ->update(['parent_id' => $page['id'], 'order' => $i + 1]);
+                $this->createModel()->where('id', '=', $child['id'])->update(['parent_id' => $page['id'], 'order' => $i + 1]);
 
                 //repeat as long as there are children
                 if (isset($child['children'])) {
@@ -151,10 +147,9 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
     public function updatePageUriIndex($root_pages)
     {
         // Reindex root items
-        $this->createModel()->where('parent_id', 0)->update(array('uri' => DB::raw('slug')));
+        $this->createModel()->where('parent_id', 0)->update(['uri' => DB::raw('slug')]);
 
         foreach ($root_pages as $page) {
-
             // Reindex child items
             $descendants = $this->getChildrenIds($page);
             foreach ($descendants as $descendant) {
@@ -162,6 +157,8 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
             }
         }
     }
+
+
     /**
      * Get the child IDs.
      *
@@ -170,15 +167,13 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
      *
      * @return array
      */
-    public function getChildrenIds($id, $id_array = array())
+    public function getChildrenIds($id, $id_array = [])
     {
         $id_array[] = $id;
-
-        if ($children = $this->createModel()->select('id', 'title')->where('parent_id', $id)->get()) {
+        $children   = $this->createModel()->where('parent_id', $id)->pluck('id');
+        if (count($children)) {
             // Recursive loop child -> children
-            foreach ($children as $child) {
-                $id_array = $this->getChildrenIds($child->id);
-            }
+            $id_array = $this->getChildrenIds($children->toArray());
         }
 
         return $id_array;
@@ -197,7 +192,7 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
     {
         $current_id = $id;
 
-        $segments = array();
+        $segments = [];
         do {
             $page = $this->createModel()->select('slug', 'parent_id')->find($current_id);
 
@@ -205,13 +200,14 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
             array_unshift($segments, $page->slug);
         } while ($page->parent_id > 0);
 
-        return $this->createModel()->where('id', $id)->update(array('uri' => implode('/', $segments)));
+        return $this->createModel()->where('id', $id)->update(['uri' => implode('/', $segments)]);
     }
 
-    public function build_select($tree = array(), $level = 0, $prefix = '-')
+
+    public function build_select($tree = [], $level = 0, $prefix = '-')
     {
         $output = '';
-        if (!$tree) {
+        if ( ! $tree) {
             $tree = $this->tree();
         }
 
@@ -221,7 +217,7 @@ class DbPageRepository extends EloquentRepository implements DbPageRepositoryInt
 
                 $output .= '<option value="'.$leaf['uri'].'">'.$pre.$leaf['title'].'</option>'."\n";
 
-                if (isset($leaf['children']) && !empty($leaf['children'])) {
+                if (isset($leaf['children']) && ! empty($leaf['children'])) {
                     $output .= $this->build_select($leaf['children'], $level + 1, $prefix);
                 }
             }
