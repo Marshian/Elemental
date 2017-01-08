@@ -4,63 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "361011c59352e86b6d32a57162df32bf",
-    "content-hash": "8c22512e5b1be3537ba0fb9c6a01e46b",
+    "hash": "beece4df5fa6a1ffb97fee6c18add31e",
+    "content-hash": "0dc50cb4f95758275e244324718b193e",
     "packages": [
-        {
-            "name": "barryvdh/laravel-debugbar",
-            "version": "v2.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "65b0465e38a9524c9d5eb2dfc0389aba23090625"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/65b0465e38a9524c9d5eb2dfc0389aba23090625",
-                "reference": "65b0465e38a9524c9d5eb2dfc0389aba23090625",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
-                "maximebf/debugbar": "~1.13.0",
-                "php": ">=5.5.9",
-                "symfony/finder": "~2.7|~3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Barryvdh\\Debugbar\\": "src/"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Barry vd. Heuvel",
-                    "email": "barryvdh@gmail.com"
-                }
-            ],
-            "description": "PHP Debugbar integration for Laravel",
-            "keywords": [
-                "debug",
-                "debugbar",
-                "laravel",
-                "profiler",
-                "webprofiler"
-            ],
-            "time": "2017-01-05 08:53:44"
-        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.1.0",
@@ -273,11 +219,16 @@
         {
             "name": "humweb/auth-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/auth-module.git",
+                "reference": "3ed934d9b5d278750519b30f5be19e2652801732"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/auth-module",
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/auth-module/zipball/3ed934d9b5d278750519b30f5be19e2652801732",
                 "reference": "3ed934d9b5d278750519b30f5be19e2652801732",
-                "shasum": null
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.3.*",
@@ -307,7 +258,12 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/auth-module/tree/master",
+                "issues": "https://github.com/humweb/auth-module/issues"
+            },
+            "time": "2016-10-28 04:18:22"
         },
         {
             "name": "humweb/breadcrumbs",
@@ -353,13 +309,19 @@
         {
             "name": "humweb/categories-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/categories-module.git",
+                "reference": "18e9319d61b99bff9ba517ed34908f7ba9157b81"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/categories-module",
-                "reference": "2bcaa97fba5f8e1e226b37b1883c35a28384fa46",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/categories-module/zipball/18e9319d61b99bff9ba517ed34908f7ba9157b81",
+                "reference": "18e9319d61b99bff9ba517ed34908f7ba9157b81",
+                "shasum": ""
             },
             "require": {
+                "gazsp/baum": "^1.1",
                 "laravel/framework": "5.3.*",
                 "php": ">=5.6.4"
             },
@@ -387,16 +349,26 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/categories-module/tree/master",
+                "issues": "https://github.com/humweb/categories-module/issues"
+            },
+            "time": "2017-01-08 05:26:54"
         },
         {
             "name": "humweb/core-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/core-module.git",
+                "reference": "fdf54a01a2660f57f6cabd55c958e1ce1004e902"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/core-module",
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/core-module/zipball/fdf54a01a2660f57f6cabd55c958e1ce1004e902",
                 "reference": "fdf54a01a2660f57f6cabd55c958e1ce1004e902",
-                "shasum": null
+                "shasum": ""
             },
             "require": {
                 "humweb/breadcrumbs": "dev-master",
@@ -427,16 +399,26 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/core-module/tree/master",
+                "issues": "https://github.com/humweb/core-module/issues"
+            },
+            "time": "2017-01-08 04:51:08"
         },
         {
             "name": "humweb/html-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/html-module.git",
+                "reference": "57e700c048cb680e5c7a020576b45edaf89d9bcb"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/html-module",
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/html-module/zipball/57e700c048cb680e5c7a020576b45edaf89d9bcb",
                 "reference": "57e700c048cb680e5c7a020576b45edaf89d9bcb",
-                "shasum": null
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.3.*",
@@ -466,16 +448,26 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/html-module/tree/master",
+                "issues": "https://github.com/humweb/html-module/issues"
+            },
+            "time": "2016-10-23 20:30:42"
         },
         {
             "name": "humweb/menus-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/menus-module.git",
+                "reference": "5d3d7c5446093ed2e5750c671e4cb9c910ed6214"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/menus-module",
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/menus-module/zipball/5d3d7c5446093ed2e5750c671e4cb9c910ed6214",
                 "reference": "5d3d7c5446093ed2e5750c671e4cb9c910ed6214",
-                "shasum": null
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.3.*",
@@ -505,31 +497,46 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/menus-module/tree/master",
+                "issues": "https://github.com/humweb/menus-module/issues"
+            },
+            "time": "2017-01-08 04:49:20"
         },
         {
             "name": "humweb/modules",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/modules.git",
+                "reference": "7c041e7e8072ff2e7e55992d06dea11a4de55c31"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/modules",
-                "reference": "4cc762c60410453e3e8f1f6b93f1ec49f3e800b2",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/modules/zipball/7c041e7e8072ff2e7e55992d06dea11a4de55c31",
+                "reference": "7c041e7e8072ff2e7e55992d06dea11a4de55c31",
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.3.*",
                 "php": ">=5.6.4"
             },
+            "require-dev": {
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "~4.0||~5.0"
+            },
             "type": "module",
             "autoload": {
                 "psr-4": {
+                    "Humweb\\Tests\\Modules\\": "tests/",
                     "Humweb\\Modules\\": "src/"
                 }
             },
             "autoload-dev": {
-                "classmap": [
-                    "tests/TestCase.php"
-                ]
+                "psr-4": {
+                    "Humweb\\Tests\\Modules\\": "tests/"
+                }
             },
             "license": [
                 "MIT"
@@ -544,16 +551,26 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/modules/tree/master",
+                "issues": "https://github.com/humweb/modules/issues"
+            },
+            "time": "2017-01-08 05:48:05"
         },
         {
             "name": "humweb/pages-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/pages-module.git",
+                "reference": "1da9bafa3b9549efccafa054f06b0e9dfd3175fb"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/pages-module",
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/pages-module/zipball/1da9bafa3b9549efccafa054f06b0e9dfd3175fb",
                 "reference": "1da9bafa3b9549efccafa054f06b0e9dfd3175fb",
-                "shasum": null
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.3.*",
@@ -587,16 +604,26 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/pages-module/tree/master",
+                "issues": "https://github.com/humweb/pages-module/issues"
+            },
+            "time": "2017-01-08 04:48:32"
         },
         {
             "name": "humweb/settings-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/settings-module.git",
+                "reference": "cc45fb5c84ff67fac42090781c85a12ab8023669"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/settings-module",
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/settings-module/zipball/cc45fb5c84ff67fac42090781c85a12ab8023669",
                 "reference": "cc45fb5c84ff67fac42090781c85a12ab8023669",
-                "shasum": null
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.3.*",
@@ -626,16 +653,26 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/settings-module/tree/master",
+                "issues": "https://github.com/humweb/settings-module/issues"
+            },
+            "time": "2016-10-25 04:38:22"
         },
         {
             "name": "humweb/tags-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/tags-module.git",
+                "reference": "d3622a6318038652be423087082a866d6f142978"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/tags-module",
-                "reference": "1628d9cb79a1dc3ea7f98a4e687915913b45c96d",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/tags-module/zipball/d3622a6318038652be423087082a866d6f142978",
+                "reference": "d3622a6318038652be423087082a866d6f142978",
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.3.*",
@@ -665,18 +702,29 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/tags-module/tree/master",
+                "issues": "https://github.com/humweb/tags-module/issues"
+            },
+            "time": "2017-01-08 05:35:16"
         },
         {
             "name": "humweb/theme-manager",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/theme-manager.git",
+                "reference": "4fe3bc995deb7762c7291d236fd1bc2e3fc13b68"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/theme-manager",
-                "reference": "119791c7d5f2982aed998e5491cc7ecf71886b16",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/theme-manager/zipball/4fe3bc995deb7762c7291d236fd1bc2e3fc13b68",
+                "reference": "4fe3bc995deb7762c7291d236fd1bc2e3fc13b68",
+                "shasum": ""
             },
             "require": {
+                "humweb/modules": "dev-master",
                 "laravel/framework": "5.3.*",
                 "php": ">=5.6.4"
             },
@@ -701,10 +749,11 @@
                 }
             ],
             "description": "The Laravel Framework.",
-            "keywords": [
-                "framework",
-                "laravel"
-            ]
+            "support": {
+                "source": "https://github.com/humweb/theme-manager/tree/master",
+                "issues": "https://github.com/humweb/theme-manager/issues"
+            },
+            "time": "2017-01-08 05:47:12"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1115,67 +1164,6 @@
                 "storage"
             ],
             "time": "2016-10-19 20:38:46"
-        },
-        {
-            "name": "maximebf/debugbar",
-            "version": "1.13.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/afee79a236348e39a44cb837106b7c5b4897ac2a",
-                "reference": "afee79a236348e39a44cb837106b7c5b4897ac2a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "psr/log": "^1.0",
-                "symfony/var-dumper": "^2.6|^3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.0|^5.0"
-            },
-            "suggest": {
-                "kriswallsmith/assetic": "The best way to manage assets",
-                "monolog/monolog": "Log using Monolog",
-                "predis/predis": "Redis storage"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.13-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "DebugBar\\": "src/DebugBar/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Maxime Bouroumeau-Fuseau",
-                    "email": "maxime.bouroumeau@gmail.com",
-                    "homepage": "http://maximebf.com"
-                },
-                {
-                    "name": "Barry vd. Heuvel",
-                    "email": "barryvdh@gmail.com"
-                }
-            ],
-            "description": "Debug bar in the browser for php application",
-            "homepage": "https://github.com/maximebf/php-debugbar",
-            "keywords": [
-                "debug",
-                "debugbar"
-            ],
-            "time": "2017-01-05 08:46:19"
         },
         {
             "name": "monolog/monolog",
