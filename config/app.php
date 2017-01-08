@@ -183,6 +183,7 @@ return [
         Humweb\Core\Providers\RouteServiceProvider::class,
 
         Humweb\Modules\ModuleServiceProvider::class,
+        Humweb\ThemeManager\ServiceProvider::class,
         Humweb\Html\HtmlServiceProvider::class,
         Humweb\Auth\AuthServiceProvider::class,
         Humweb\Auth\AuthRouteServiceProvider::class,
