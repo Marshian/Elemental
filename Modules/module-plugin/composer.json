@@ -1,0 +1,10 @@
+{
+  "name": "humweb/module-plugin",
+  "type": "composer-plugin",
+  "require": {
+    "composer-plugin-api": "^1.0"
+  },
+  "extra": {
+    "class": "My\\Plugin"
+  }
+}
