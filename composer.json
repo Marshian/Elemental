@@ -25,7 +25,6 @@
     "php": ">=5.6.4",
     "laravel/framework": "5.3.*",
     "laravelcollective/html": "5.*",
-    "gazsp/baum": "^1.1",
     "humweb/modules": "dev-master",
     "humweb/theme-manager": "dev-master",
     "humweb/core-module": "dev-master",
@@ -35,8 +34,7 @@
     "humweb/html-module": "dev-master",
     "humweb/settings-module": "dev-master",
     "humweb/menus-module": "dev-master",
-    "humweb/categories-module": "dev-master",
-    "barryvdh/laravel-debugbar": "^2.3"
+    "humweb/categories-module": "dev-master"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

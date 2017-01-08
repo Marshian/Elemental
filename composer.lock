@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8be5ad6a33aaff5bbaa583ca6fc7a0fd",
-    "content-hash": "690e22c36641fad586c68b0bb6c59df8",
+    "hash": "361011c59352e86b6d32a57162df32bf",
+    "content-hash": "8c22512e5b1be3537ba0fb9c6a01e46b",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -395,7 +395,7 @@
             "dist": {
                 "type": "path",
                 "url": "Modules/core-module",
-                "reference": "38236cb2523b2d7ebf13327c04768a4abbfe9edf",
+                "reference": "fdf54a01a2660f57f6cabd55c958e1ce1004e902",
                 "shasum": null
             },
             "require": {
@@ -474,7 +474,7 @@
             "dist": {
                 "type": "path",
                 "url": "Modules/menus-module",
-                "reference": "6bf859e98ebddb05254db7cf534d685170811a80",
+                "reference": "5d3d7c5446093ed2e5750c671e4cb9c910ed6214",
                 "shasum": null
             },
             "require": {
@@ -552,7 +552,7 @@
             "dist": {
                 "type": "path",
                 "url": "Modules/pages-module",
-                "reference": "1645a8901119cee2ff25c8060ce737fd3ec8e7d4",
+                "reference": "1da9bafa3b9549efccafa054f06b0e9dfd3175fb",
                 "shasum": null
             },
             "require": {
