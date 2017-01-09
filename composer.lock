@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1aba61158900442b0fa1dfb57935febb",
-    "content-hash": "193fbce160b7e91f5f1acbe545124fa8",
+    "hash": "cf908e6ca013a6ba4412237d11f105bb",
+    "content-hash": "9272afb5a7f7c0b457d7d43358e383ed",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -277,6 +277,11 @@
         {
             "name": "humweb/auth-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/auth-module.git",
+                "reference": "3ed934d9b5d278750519b30f5be19e2652801732"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/humweb/auth-module/zipball/3ed934d9b5d278750519b30f5be19e2652801732",
@@ -362,6 +367,11 @@
         {
             "name": "humweb/categories-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/categories-module.git",
+                "reference": "18e9319d61b99bff9ba517ed34908f7ba9157b81"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/humweb/categories-module/zipball/18e9319d61b99bff9ba517ed34908f7ba9157b81",
@@ -407,6 +417,11 @@
         {
             "name": "humweb/core-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/core-module.git",
+                "reference": "fdf54a01a2660f57f6cabd55c958e1ce1004e902"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/humweb/core-module/zipball/fdf54a01a2660f57f6cabd55c958e1ce1004e902",
@@ -452,11 +467,16 @@
         {
             "name": "humweb/filemanager-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/filemanager-module.git",
+                "reference": "579e5e9ed3088bde9b367aab7ba3d1a4813f18da"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/filemanager-module",
-                "reference": "7ce9ddad7c7757c365b9cca21b8203b90cc74b33",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/filemanager-module/zipball/579e5e9ed3088bde9b367aab7ba3d1a4813f18da",
+                "reference": "579e5e9ed3088bde9b367aab7ba3d1a4813f18da",
+                "shasum": ""
             },
             "require": {
                 "intervention/image": "~2.3",
@@ -487,11 +507,21 @@
                     "email": "ryun@humboldtweb.com"
                 }
             ],
-            "description": "The Laravel Framework."
+            "description": "The Laravel Framework.",
+            "support": {
+                "source": "https://github.com/humweb/filemanager-module/tree/master",
+                "issues": "https://github.com/humweb/filemanager-module/issues"
+            },
+            "time": "2017-01-09 03:55:19"
         },
         {
             "name": "humweb/html-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/html-module.git",
+                "reference": "57e700c048cb680e5c7a020576b45edaf89d9bcb"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/humweb/html-module/zipball/57e700c048cb680e5c7a020576b45edaf89d9bcb",
@@ -536,6 +566,11 @@
         {
             "name": "humweb/menus-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/menus-module.git",
+                "reference": "5d3d7c5446093ed2e5750c671e4cb9c910ed6214"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/humweb/menus-module/zipball/5d3d7c5446093ed2e5750c671e4cb9c910ed6214",
@@ -580,11 +615,16 @@
         {
             "name": "humweb/modules",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/modules.git",
+                "reference": "820cd7ddf7c9535c34c0db1ffb8285976cf8b71c"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/modules",
-                "reference": "7db5ecb76c053367bf5d0f72a7a9fb712523d2b6",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/modules/zipball/820cd7ddf7c9535c34c0db1ffb8285976cf8b71c",
+                "reference": "820cd7ddf7c9535c34c0db1ffb8285976cf8b71c",
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.3.*",
@@ -619,11 +659,21 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/modules/tree/master",
+                "issues": "https://github.com/humweb/modules/issues"
+            },
+            "time": "2017-01-09 03:57:24"
         },
         {
             "name": "humweb/pages-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/pages-module.git",
+                "reference": "1da9bafa3b9549efccafa054f06b0e9dfd3175fb"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/humweb/pages-module/zipball/1da9bafa3b9549efccafa054f06b0e9dfd3175fb",
@@ -672,11 +722,16 @@
         {
             "name": "humweb/settings-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/settings-module.git",
+                "reference": "052276eabf2829046cd6b8a9a25f3f14b61a8936"
+            },
             "dist": {
-                "type": "path",
-                "url": "Modules/settings-module",
+                "type": "zip",
+                "url": "https://api.github.com/repos/humweb/settings-module/zipball/052276eabf2829046cd6b8a9a25f3f14b61a8936",
                 "reference": "052276eabf2829046cd6b8a9a25f3f14b61a8936",
-                "shasum": null
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.3.*",
@@ -706,11 +761,21 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/humweb/settings-module/tree/master",
+                "issues": "https://github.com/humweb/settings-module/issues"
+            },
+            "time": "2017-01-08 07:25:27"
         },
         {
             "name": "humweb/tags-module",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/tags-module.git",
+                "reference": "d3622a6318038652be423087082a866d6f142978"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/humweb/tags-module/zipball/d3622a6318038652be423087082a866d6f142978",
@@ -755,6 +820,11 @@
         {
             "name": "humweb/theme-manager",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humweb/theme-manager.git",
+                "reference": "4fe3bc995deb7762c7291d236fd1bc2e3fc13b68"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/humweb/theme-manager/zipball/4fe3bc995deb7762c7291d236fd1bc2e3fc13b68",
