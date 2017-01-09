@@ -34,7 +34,8 @@
     "humweb/html-module": "dev-master",
     "humweb/settings-module": "dev-master",
     "humweb/menus-module": "dev-master",
-    "humweb/categories-module": "dev-master"
+    "humweb/categories-module": "dev-master",
+    "humweb/filemanager-module": "dev-master"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
