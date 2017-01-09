@@ -18,7 +18,8 @@
     {"type": "vcs", "url": "https://github.com/humweb/html-module"},
     {"type": "vcs", "url": "https://github.com/humweb/settings-module"},
     {"type": "vcs", "url": "https://github.com/humweb/menus-module"},
-    {"type": "vcs", "url": "https://github.com/humweb/categories-module"}
+    {"type": "vcs", "url": "https://github.com/humweb/categories-module"},
+    {"type": "vcs", "url": "https://github.com/humweb/filemanager-module"}
   ],
 
   "require": {
