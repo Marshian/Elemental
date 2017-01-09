@@ -197,6 +197,8 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Humweb\Pages\ServiceProvider::class,
         Humweb\Pages\PagesRouteServiceProvider::class,
+        Humweb\Filemanager\ServiceProvider::class,
+        Humweb\Filemanager\FilemanagerRouteServiceProvider::class,
     ],
 
     /*
