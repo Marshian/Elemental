@@ -28,8 +28,8 @@ CKEDITOR.editorConfig = function (config) {
       {name: 'styles'}
    ];
 
-   config.filebrowserImageBrowseUrl = '/filemanager?type=Images';
-   config.filebrowserBrowseUrl = '/filemanager?type=Files';
+   config.filebrowserImageBrowseUrl = '/admin/filemanager?type=Images';
+   config.filebrowserBrowseUrl = '/admin/filemanager?type=Files';
 
    // Remove some buttons, provided by the standard plugins, which we don't
    // need to have in the Standard(s) toolbar.
