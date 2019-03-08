@@ -1,3 +1,1 @@
-# Team Elemental
-
-<p align="center"><img src="./public/img/line-logo.png"></p>
+<h1 align="center"><img src="./public/img/line-logo.png"> Team Elemental</p>
