@@ -1,5 +1,5 @@
 body{
-	background: url(../images/background.jpg);
+	background: url(../img/background.jpg);
 	font-family: 'Montserrat', sans-serif !important;
 	background-repeat: no-repeat;
 	background-position: 63% 0%;;
@@ -78,7 +78,7 @@ p.about{
    display: none;
 }
 .cst_banner{
-	background:url(../images/slider1.jpg);
+	background:url(../img/slider1.jpg);
 	min-height:480px;
 	background-repeat:no-repeat;
 	background-size:cover;
@@ -346,7 +346,7 @@ p.about{
     padding: 20px 0px;
 }
 	.navbar-toggler{
-		background:url(../images/menu.png) !important;
+		background:url(../img/menu.png) !important;
 		background-repeat:no-repeat !important;
 		outline: none !important;
 		padding: 15px !important;
@@ -413,7 +413,7 @@ p.about{
 }
 @media (min-width:768px) and (max-width:991px){
 	.navbar-toggler {
-    background: url(../images/menu.png) !important;
+    background: url(../img/menu.png) !important;
     background-repeat: no-repeat !important;
     outline: none !important;
 	padding: 15px !important;

@@ -24,15 +24,15 @@
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="element">
-                            <a href="http://staging.marshian.com.au/index.html"><img src="{{ asset('main-logo.png') }}" alt="" class="img-fluid d-lg-block d-none"></a>
-                            <a href="http://staging.marshian.com.au/index.html"><img src="{{ asset('footer-logo.png') }}" alt="" class="img-fluid d-block d-lg-none"></a>
+                            <a href="http://staging.marshian.com.au/index.html"><img src="{{ asset('img/main-logo.png') }}" alt="" class="img-fluid d-lg-block d-none"></a>
+                            <a href="http://staging.marshian.com.au/index.html"><img src="{{ asset('img/footer-logo.png') }}" alt="" class="img-fluid d-block d-lg-none"></a>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
-                        <a href="http://staging.marshian.com.au/promo-future-home-living.html"><img src="{{ asset('future.png') }}" alt="" class="img-fluid"></a>
+                        <a href="http://staging.marshian.com.au/promo-future-home-living.html"><img src="{{ asset('img/future.png') }}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="col-md-3 col-6">
-                        <a href="http://staging.marshian.com.au/sponsors-marshian.html"><img src="{{ asset('marshian.png') }}" alt="" class="img-fluid"></a>
+                        <a href="http://staging.marshian.com.au/sponsors-marshian.html"><img src="{{ asset('img/marshian.png') }}" alt="" class="img-fluid"></a>
                     </div>
                 </div>
             </div>
