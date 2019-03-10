@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Login</title>
+    <title>Elemental Esports | Login</title>
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet">
@@ -20,12 +20,11 @@
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
             <div>
-                <h1 class="logo-name">IN+</h1>
+                <h1 class="logo-name">Elemental</h1>
             </div>
-            <h3>Welcome to IN+</h3>
-            <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
-            </p>
-            <p>Login in. To see it in action.</p>
+            <h3>Welcome to Elemental</h3>
+
+            <p>Login</p>
             <form class="m-t" role="form" method="POST" action="{{ url('login') }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
