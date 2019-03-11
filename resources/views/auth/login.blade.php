@@ -8,11 +8,11 @@
 
     <title>Elemental Esports | Login</title>
 
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/css/style.css') }}" rel="stylesheet">
 
 </head>
 
@@ -42,8 +42,8 @@
         </div>
     </div>
     <!-- Mainly scripts -->
-    <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('backend/js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
 </body>
 
 </html>
