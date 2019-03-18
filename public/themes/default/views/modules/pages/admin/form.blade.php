@@ -106,7 +106,7 @@
     {!! Form::close() !!}
 @endsection
 
-@section('style')
+@section('styles')
     <style>
         .tab-pane {
             padding: 25px 0;
@@ -117,12 +117,6 @@
             height: 300px;
             font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
         }
-    </style>
-@endsection
-
-@section('footer_scripts')
-    knkkkkjkj
-    <style>
         .anim {
             position: relative;
             -webkit-transition: all .25s ease-out;
@@ -135,6 +129,10 @@
             right: -100%;
         }
     </style>
+@endsection
+
+@section('footer_scripts')
+ddddd
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('js/ace/ace.js') }}"></script>
     <script src="{{ asset('js/ace/mode-javascript.js') }}"></script>
