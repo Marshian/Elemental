@@ -393,12 +393,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/humweb/auth-module.git",
-                "reference": "d54a486f0bfb484f6f40aba8563dadb3342bf0da"
+                "reference": "3f409c1c031f271958a2b22ca5207e3ed017d1ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humweb/auth-module/zipball/d54a486f0bfb484f6f40aba8563dadb3342bf0da",
-                "reference": "d54a486f0bfb484f6f40aba8563dadb3342bf0da",
+                "url": "https://api.github.com/repos/humweb/auth-module/zipball/3f409c1c031f271958a2b22ca5207e3ed017d1ad",
+                "reference": "3f409c1c031f271958a2b22ca5207e3ed017d1ad",
                 "shasum": ""
             },
             "require": {
@@ -438,7 +438,7 @@
                 "source": "https://github.com/humweb/auth-module/tree/master",
                 "issues": "https://github.com/humweb/auth-module/issues"
             },
-            "time": "2019-03-15T20:56:53+00:00"
+            "time": "2019-03-18T21:48:24+00:00"
         },
         {
             "name": "humweb/breadcrumbs",
