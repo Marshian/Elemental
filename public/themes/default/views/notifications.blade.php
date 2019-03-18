@@ -1,4 +1,4 @@
-<div class="col-md-6 col-md-offset-2">
+
 @if (count($errors) > 0)
 <div class="alert alert-danger">
 	<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
@@ -8,7 +8,7 @@
 </div>
 @endif
 
-@if ($message = Session::get('success'))
+@if ($message = session('success'))
 <div class="alert alert-success">
 	<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
 	<b>Success</b>
@@ -16,7 +16,7 @@
 </div>
 @endif
 
-@if ($message = Session::get('error'))
+@if ($message = session('error'))
 <div class="alert alert-danger">
 	<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
 	<b>Error</b>
@@ -24,7 +24,7 @@
 </div>
 @endif
 
-@if ($message = Session::get('warning'))
+@if ($message = session('warning'))
 <div class="alert alert-warning">
 	<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
 	<b>Warning</b>
@@ -32,11 +32,10 @@
 </div>
 @endif
 
-@if ($message = Session::get('info'))
+@if ($message = session('info'))
 <div class="alert-info">
 	<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
 	<b>Info</b>
 	{{ $message }}
 </div>
 @endif
-</div>

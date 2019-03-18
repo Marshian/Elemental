@@ -1,0 +1,74 @@
+$input-btn-padding-y-xs:    .25rem !default;
+$input-btn-padding-x-xs:    .5rem !default;
+$input-btn-line-height-xs:  1.3 !default;
+$line-height-xs:         1.3 !default;
+
+.btn-xs {
+  @include button-size($input-btn-padding-y-xs, $input-btn-padding-x-xs, $font-size-xs, $line-height-xs, $btn-border-radius-sm);
+}
+
+.btn:focus {
+  outline: none!important;
+  -webkit-box-shadow: none!important;;
+  box-shadow: none!important;;
+}
+
+
+
+.btn-wave {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 5%;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.5) 10%, transparent 10%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10,10);
+    opacity: 0;
+    transition: transform .3s, opacity 1s;
+  }
+
+  &:active:after {
+    transform: scale(0,0);
+    opacity: .2;
+    transition: 0s;
+  }
+}
+
+//.btn:before {
+//  content: "";
+//
+//  position: absolute;
+//  top: 50%;
+//  left: 50%;
+//
+//  display: block;
+//  width: 0;
+//  padding-top: 0;
+//
+//  border-radius: 100%;
+//
+//  background-color: rgba(236, 240, 241, .3);
+//
+//  -webkit-transform: translate(-50%, -50%);
+//  -moz-transform: translate(-50%, -50%);
+//  -ms-transform: translate(-50%, -50%);
+//  -o-transform: translate(-50%, -50%);
+//  transform: translate(-50%, -50%);
+//}
+//
+//.btn:active:before {
+//  width: 100%;
+//  padding-top: 100%;
+//
+//  transition: width .2s ease-out, padding-top .2s ease-out;
+//}

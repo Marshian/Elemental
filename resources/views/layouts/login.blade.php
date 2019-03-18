@@ -27,9 +27,7 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
-                'csrfToken' => csrf_token(),
-        ]); ?>
+        window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     @yield('header_scripts')
@@ -49,6 +47,7 @@
         </div>
     </div>
 </div>
+@include('partials.footer')
 <!-- Scripts -->
 <script src="/js/app.js"></script>
 </body>

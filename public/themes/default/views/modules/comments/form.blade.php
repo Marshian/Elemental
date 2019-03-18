@@ -1,10 +1,10 @@
-	<div class="panel panel-default">
-        <div class="panel-heading">
+	<div class="card card-default">
+        <div class="card-header">
             <h4 id="add-comments">
                 Add a comment {{ $user->first_name or 'Guest' }}
             </h4>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             @if ($user)
             {{ Form::open(array('route'=>'post.comments.create')) }}
 
@@ -33,7 +33,7 @@
             <a href="{{route('get.login')}}" class="btn btn-primary btn-xs">
                 Login
             </a>
-            <a href="{{ route('get.register') }}" class="btn btn-default btn-xs">
+            <a href="{{ route('get.register') }}" class="btn btn-secondary btn-xs">
                 Register
             </a>
             @endif

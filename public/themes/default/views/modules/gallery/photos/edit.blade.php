@@ -1,10 +1,10 @@
 @section('content')
 <div class="container">
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="card card-default">
+    <div class="card-header">
         <h4>Edit Photo</h4>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">

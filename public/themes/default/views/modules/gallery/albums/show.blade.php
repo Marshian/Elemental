@@ -1,23 +1,23 @@
 @section('content')
 <link rel="stylesheet" href="/css/app.css"/>
 <div class="container">
-<div class="panel panel-default">
-<div class="panel-heading">
+<div class="card card-default">
+<div class="card-header">
 <div class="pull-right">
 <a href="{{route('get.albums.photos.add', array($album->id))}}" class="btn btn-primary" data-toggle="tooltip" title="Add Photos"><i class="icon-plus"></i></a>
  <a href="{{ route('get.albums') }}" class="btn btn-primary" data-toggle="tooltip" title="Back to Albums"><i class="icon-arrow-left"></i></a>
  </div>
 <h4>{{ $album->name }} <small>Album</small></h4>
 </div>
-    <div class="panel-body">
+    <div class="card-body">
     <div id="timeline" class="photo-grid" data-columns>
             @if (count($album))
             @foreach ($album->photos as $photo)
             <div class="item" data-id="{{ $photo->id }}">
                 <img src="{{ GImage::url($photo->path, 'thumb') }}" class="img-responsive" alt=""/>
                 <div class="btn-overlay">
-                    <a class="btn btn-xs btn-default btnSetCover" data-id="{{ $photo->id }}" href="#">Set as cover</a>
-                    <a class="btn btn-xs btn-default" href="{{ route('get.photo.edit', $photo->id) }}">Edit</a>
+                    <a class="btn btn-xs btn-secondary btnSetCover" data-id="{{ $photo->id }}" href="#">Set as cover</a>
+                    <a class="btn btn-xs btn-secondary" href="{{ route('get.photo.edit', $photo->id) }}">Edit</a>
                     <a class="btn btn-xs btn-danger confirm" href="{{ route('get.photo.delete', [$photo->id]) }}">Delete</a>
                 </div>
             </div>

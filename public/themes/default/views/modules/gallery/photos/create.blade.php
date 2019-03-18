@@ -1,12 +1,12 @@
 @section('content')
 <link rel="stylesheet" href="/css/app.css"/>
 <div class="container">
-<div class="panel panel-default">
-	<div class="panel-heading">
+<div class="card card-default">
+	<div class="card-header">
 		<a href="{{ route('get.albums.view', [$album->id]) }}" class="btn btn-primary pull-right" data-toggle="tooltip"><i class="icon-arrow-left"></i> Album</a>
 		<h4>{{ $album->name  }} <small>Upload Images</small></h4>
 	</div>
-    <div class="panel-body upload-container">
+    <div class="card-body upload-container">
 
                 <div class="example">
                     <div class="example__left" style="text-align: left; padding-top: 100px;">

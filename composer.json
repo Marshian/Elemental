@@ -1,88 +1,129 @@
 {
-  "name": "laravel/laravel",
-  "description": "The Laravel Framework.",
+  "name": "humweb/cms",
+  "description": "Humweb CMS Framework.",
   "keywords": [
     "framework",
     "laravel"
   ],
   "license": "MIT",
   "type": "project",
-
   "repositories": [
-    {"type": "vcs", "url": "https://github.com/humweb/modules"},
-    {"type": "vcs", "url": "https://github.com/humweb/core-module"},
-    {"type": "vcs", "url": "https://github.com/humweb/theme-manager"},
-    {"type": "vcs", "url": "https://github.com/humweb/auth-module"},
-    {"type": "vcs", "url": "https://github.com/humweb/pages-module"},
-    {"type": "vcs", "url": "https://github.com/humweb/tags-module"},
-    {"type": "vcs", "url": "https://github.com/humweb/html-module"},
-    {"type": "vcs", "url": "https://github.com/humweb/settings-module"},
-    {"type": "vcs", "url": "https://github.com/humweb/menus-module"},
-    {"type": "vcs", "url": "https://github.com/humweb/categories-module"},
-    {"type": "vcs", "url": "https://github.com/humweb/filemanager-module"}
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/modules"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/core-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/contact-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/auth-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/pages-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/tags-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/html-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/settings-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/menus-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/filemanager-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/theme-manager"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/publishable"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/teams"
+    }
   ],
-
   "require": {
-    "php": ">=5.6.4",
-    "laravel/framework": "5.3.*",
-    "laravelcollective/html": "5.*",
-    "humweb/modules": "dev-master",
-    "humweb/theme-manager": "dev-master",
-    "humweb/core-module": "dev-master",
+    "php": ">=7.0.0",
+    "fideloper/proxy": "~3.3",
     "humweb/auth-module": "dev-master",
-    "humweb/pages-module": "dev-master",
-    "humweb/tags-module": "dev-master",
+    "humweb/breadcrumbs": "dev-master",
+    "humweb/contact-module": "dev-master",
+    "humweb/core-module": "dev-master",
+    "humweb/filemanager-module": "dev-master",
     "humweb/html-module": "dev-master",
-    "humweb/settings-module": "dev-master",
     "humweb/menus-module": "dev-master",
-    "humweb/categories-module": "dev-master",
-    "humweb/filemanager-module": "dev-master"
+    "humweb/modules": "dev-master",
+    "humweb/pages-module": "dev-master",
+    "humweb/settings-module": "dev-master",
+    "humweb/tags-module": "dev-master",
+    "humweb/theme-manager": "dev-master",
+    "humweb/teams": "dev-master",
+    "laravel/framework": "5.5.*",
+    "laravel/tinker": "~1.0",
+    "laravelcollective/html": "^5.5",
+    "humweb/publishable": "dev-master"
   },
   "require-dev": {
+    "filp/whoops": "~2.0",
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
-    "phpunit/phpunit": "~5.0",
-    "symfony/css-selector": "3.1.*",
-    "symfony/dom-crawler": "3.1.*"
+    "phpunit/phpunit": "~6.0"
   },
   "autoload": {
     "classmap": [
-      "database"
+      "database/seeds",
+      "database/factories"
     ],
     "psr-4": {
       "App\\": "app/"
     }
   },
   "autoload-dev": {
-    "classmap": [
-      "tests/TestCase.php"
-    ]
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "dont-discover": [
+        "rollbar/rollbar-laravel"
+      ]
+    }
   },
   "scripts": {
     "post-root-package-install": [
-      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],
     "post-create-project-cmd": [
-      "php artisan key:generate"
+      "@php artisan key:generate"
     ],
-    "post-package-install": [
-      "Humweb\\Modules\\ComposerHooks::scanPackageForModules"
-    ],
-    "post-package-update": [
-      "Humweb\\Modules\\ComposerHooks::scanPackageForModules"
-    ],
-    "post-install-cmd": [
-      "Illuminate\\Foundation\\ComposerScripts::postInstall",
-      "php artisan optimize"
-    ],
-    "post-update-cmd": [
-      "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-      "php artisan optimize"
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover"
     ]
   },
   "config": {
-    "preferred-install": "dist"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
 }

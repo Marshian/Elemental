@@ -162,7 +162,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        //Barryvdh\Debugbar\ServiceProvider::class,
+        //Rollbar\Laravel\RollbarServiceProvider::class,
+//        Wpb\String_Blade_Compiler\ViewServiceProvider::class,
+//        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -173,16 +175,12 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         //App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-
-        Humweb\ThemeManager\ServiceProvider::class,
-
-        Humweb\Core\Providers\RouteServiceProvider::class,
 
         Humweb\Modules\ModuleServiceProvider::class,
+        Humweb\Core\AppServiceProvider::class,
+        Humweb\Core\RouteServiceProvider::class,
         Humweb\ThemeManager\ServiceProvider::class,
         Humweb\Html\HtmlServiceProvider::class,
         Humweb\Auth\AuthServiceProvider::class,
@@ -194,11 +192,14 @@ return [
 //        Humweb\Blog\ServiceProvider::class,
 //        Humweb\Blog\BlogRouteServiceProvider::class,
 //        Humweb\Categories\Http\CategoriesRouteServiceProvider::class,
+        Humweb\Contact\ContactServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Humweb\Pages\ServiceProvider::class,
         Humweb\Pages\PagesRouteServiceProvider::class,
+        Humweb\Tags\ServiceProvider::class,
         Humweb\Filemanager\ServiceProvider::class,
         Humweb\Filemanager\FilemanagerRouteServiceProvider::class,
+        Humweb\Teams\Providers\TeamsServiceProvider::class,
     ],
 
     /*
@@ -218,6 +219,8 @@ return [
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
+        'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
+        'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,

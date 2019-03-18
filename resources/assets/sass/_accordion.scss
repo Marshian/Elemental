@@ -1,0 +1,19 @@
+.accordion {
+  .card-header, .card {
+    border-radius: 0;
+  }
+  .card {
+    margin-top: -2px;
+    &:first-child {
+      margin-top: 0;
+      border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    }
+
+    //&:last-child .card-header {
+    //  border-bottom: 0;
+    //}
+    &:last-child {
+      border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+    }
+  }
+}

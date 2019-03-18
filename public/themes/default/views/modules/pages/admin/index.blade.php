@@ -1,63 +1,55 @@
 @section('title')
-Pages -
-@parent
+    Pages -
+    @parent
 @stop
 
 {{-- Content --}}
 @section('content')
-<div class="container">
+    @if ( ! empty($content))
 
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<div class="pull-right">
-			<a class="btn btn-primary" href="{{ route('get.admin.pages.create') }}" title="Add pages" data-toggle="tooltip"><i class="icon-plus"></i></a>
-		</div>
-		<h4>Pages</h4>
-	</div>
-	<div class="panel-body">
+        <div class="">
+            <div class="dd" id="nestable">
+                <ol class="dd-list">
+                    {!! $content !!}
+                </ol>
+            </div>
+        </div>
+    @else
+        <h5>No pages added yet..</h5>
+    @endif
+@endsection
+@section('footer_scripts')
+    <script src="{{ asset('js/jquery.nestable.js') }}"></script>
 
-	@if ( ! $pages->isEmpty())
+    <script>
+        $(function () {
+            var updateOutput = function (e, n) {
+                console.log(n)
+                var list = e.length ? e : $(e.target), output = list.data('output');
+                if (window.JSON) {
+                    $.post('/admin/pages/sort', {
+                            _token: '{{ Session::token() }}',
+                            item: n.item.data('id'),
+                            position: n.index,
+                            prevParent: n.prevParent.length ? n.prevParent.data('id') : 0,
+                            parent: n.parent.length ? n.parent.data('id') : 0
+                            //,pages: window.JSON.stringify(list.nestable('serialize'))
+                        },
+                        function (data) {
+                            console.log(data)
+                        }, 'json'
+                    );
+                }
+            };
 
-		<div class="cf nestable-lists">
-			<div class="dd" id="nestable">
-				<ol class="dd-list">
-					{{ $content }}
-				</ol>
-			</div>
-		</div>
-	@else
-		<div class="panel">
-			<h5>No pages added yet..</h5>
-		</div>
-	@endif
-	
-	</div>
-<!-- 	<div class="panel-footer text-right">
-	</div> -->
-</div>
-	<script src="{{ asset('js/jquery.nestable.js') }}"></script>
+            $('#nestable').nestable({
+                maxDepth: 10
+            }).on('change', updateOutput);
 
-	<script>
-	$(function(){
-	   var updateOutput = function(e){
-	        var list = e.length ? e : $(e.target), output = list.data('output');
-	        if (window.JSON) {
-	            $.post('/admin/pages/sort', {
-	            		_token: '{{ Session::token() }}',
-	            		pages: window.JSON.stringify(list.nestable('serialize'))
-	            	},
-	            	function(data){
-	            		console.log(data)
-	            	}, 'json'
-	            );
-	        }
-	    };
+        });
+    </script>
+@endsection
 
-		$('#nestable').nestable({
-			maxDepth: 10
-		}).on('change', updateOutput);
-
-	});
-	</script>
-
-@show
+@section('subnav')
+    <a href="/admin/pages/create" class="btn btn-primary">New page</a>
+@endsection

@@ -1,6 +1,6 @@
 <div class="row padv">
     <div class="large-6 columns">
-        <p>©2013 HumboldtWeb. All Rights Reserved.</p>
+        <p class="text-muted">©2013 HumboldtWeb. All Rights Reserved.</p>
     </div>
     <div class="large-6 columns">
         <ul class="inline-list right">

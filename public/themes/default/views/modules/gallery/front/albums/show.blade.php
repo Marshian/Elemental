@@ -1,14 +1,14 @@
 @section('content')
 <div class="container">
-<a class="btn btn-default" href="{{ route('get.front.albums') }}"><i class="icon-arrow-left"></i> Albums</a>
+<a class="btn btn-secondary" href="{{ route('get.front.albums') }}"><i class="icon-arrow-left"></i> Albums</a>
 
 <br/>
 <br/>
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="card card-default">
+    <div class="card-header">
         <h3>{{ $album->name }}</h3>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         @if ($album->description)
             <p>{{ $album->description }}</p>
             <br/>

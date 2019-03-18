@@ -196,6 +196,7 @@
             this.dragDepth  = 0;
             this.hasNewRoot = false;
             this.pointEl    = null;
+            this.prevRoot   = null;
         },
 
         expandItem: function(li)
@@ -256,6 +257,8 @@
                 target   = $(e.target),
                 dragItem = target.closest(this.options.itemNodeName);
 
+            this.prevRoot = dragItem.parents('.dd-item').first()
+
             this.placeEl.css('height', dragItem.height());
 
             mouse.offsetX = e.offsetX !== undefined ? e.offsetX : e.pageX - target.offset().left;
@@ -299,7 +302,13 @@
             this.placeEl.replaceWith(el);
 
             this.dragEl.remove();
-            this.el.trigger('change');
+            var parent = el.parents('.dd-item').first();
+            this.el.trigger('change', {
+                item: el,
+                parent: el.parents('.dd-item').first(),
+                index: el.index() + 1,
+                prevParent: this.prevRoot
+            });
             if (this.hasNewRoot) {
                 this.dragRootEl.trigger('change');
             }
@@ -488,4 +497,4 @@
         return retval || lists;
     };
 
-})(window.jQuery || window.Zepto, window, document);
+})($ || window.Zepto, window, document);

@@ -12,21 +12,16 @@
             {{ $siteSettings['site.name'] or 'Dark Star Mountain Tours' }} - Admin
         @show
     </title>
-{{ $metadata or '' }}
-<!-- Styles -->
+    {{ $metadata or '' }}
     <link href="/css/app.css" rel="stylesheet">
-
-    <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
-                'csrfToken' => csrf_token(),
-        ]); ?>
+        window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
     </script>
 </head>
 <body>
 @include('partials.frontend-navbar')
 @yield('content')
-
+@include('partials.footer')
 <!-- Scripts -->
 <script src="/js/app.js"></script>
 </body>

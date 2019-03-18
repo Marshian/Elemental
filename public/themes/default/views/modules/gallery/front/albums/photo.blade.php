@@ -1,6 +1,6 @@
 @section('content')
 <div class="container">
-<a class="btn btn-default" href="{{route('get.front.albums.view', array($photo->albums->first()->id))}}"><i class="icon-arrow-left"></i> {{ $photo->albums->first()->name }}</a>
+<a class="btn btn-secondary" href="{{route('get.front.albums.view', array($photo->albums->first()->id))}}"><i class="icon-arrow-left"></i> {{ $photo->albums->first()->name }}</a>
 
 <h1>{{{ $photo->name }}}</h1>
 

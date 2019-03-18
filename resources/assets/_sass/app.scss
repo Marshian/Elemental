@@ -1,0 +1,253 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+// Variables
+@import "bootstrap/variables";
+@import "variables";
+// Bootstrap
+@import "bootstrap/mixins";
+// Reset and dependencies
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+//@import "bootstrap/glyphicons";
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+// Components
+@import "bootstrap/component-animations";
+@import "bootstrap/dropdowns";
+@import "bootstrap/button-groups";
+@import "bootstrap/input-groups";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
+@import "bootstrap/labels";
+@import "bootstrap/badges";
+@import "bootstrap/jumbotron";
+@import "bootstrap/thumbnails";
+@import "bootstrap/alerts";
+@import "bootstrap/progress-bars";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/panels";
+@import "bootstrap/responsive-embed";
+@import "bootstrap/wells";
+@import "bootstrap/close";
+// Components w/ JavaScript
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
+@import "bootstrap/carousel";
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+.navbar-no-margin {
+  margin-bottom: 0;
+  &:after {
+    bottom: -14px;
+    background-image: url("../img/scratches-2.png");
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    height: 17px;
+    z-index: 2;
+  }
+  .navbar-nav > li > a {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 501px) {
+  .section {
+    margin-top: -4px;
+    height: 760px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(/img/bg/bg.jpg);
+    //background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    .hero-text {
+      font-size: 3em;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .section {
+    margin-top: -15px;
+    height: 660px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(/img/bg/bg-home-mobile.jpg);
+    //background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+.section {
+  .hero-text {
+    position: absolute;
+    top: 23%;
+    right: 3%;
+    width: 45%;
+    color: #fff;
+    font-size: 3em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.78);
+  }
+
+  &:after {
+    bottom: -2px;
+    //background-image: url("../img/scratches-1.png");
+    background-image: url("../img/scratches-1-dark.png");
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    height: 17px;
+    z-index: 2;
+  }
+}
+
+.section-feature {
+  position: relative;
+
+  //&:after {
+  //  bottom: -2px;
+  //  background-image: url("../img/scratches-1.png");
+  //  content: '';
+  //  position: absolute;
+  //  left: 0;
+  //  width: 100%;
+  //  background-size: cover;
+  //  background-repeat: repeat-x;
+  //  height: 17px;
+  //  z-index: 2;
+  //}
+  //&:after {
+  //  bottom: -17px;
+  //  background-image: url("../img/scratches-1-dark.png");
+  //  content: '';
+  //  position: absolute;
+  //  left: 0;
+  //  width: 100%;
+  //  background-size: cover;
+  //  background-repeat: repeat-x;
+  //  height: 17px;
+  //  z-index: 2;
+  //}
+}
+
+.section-feature-dark {
+  position: relative;
+  color: #fff;
+  margin-top: 17px;
+
+  h3 {
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  background: #000;
+  &:before {
+    top: -17px;
+    background-image: url("../img/scratches-1-dark.png");
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    height: 17px;
+    z-index: 2;
+  }
+  &:after {
+    bottom: -17px;
+    background-image: url("../img/scratches-3-dark.png");
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    height: 17px;
+    z-index: 2;
+  }
+}
+
+
+
+#submenu {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.08);
+  min-height: 60px;
+  width: 100%;
+  text-align: center;
+  a {
+    //font-size: 18px;
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+    transition: all 0.2s ease;
+  }
+  //.logo {
+  //  height: 50px;display: inline;margin-top: -15px;
+  //}
+  &.affix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999999;
+
+    min-height: 35px !important;
+    //.logo {
+    //  height: 40px;
+    //  margin-top: -5px;
+    //}
+    a {
+      font-size: 18px;
+      padding-bottom: 15px !important;
+      padding-top: 15px !important;
+    }
+    .navbar-toggle {
+      margin: 8px 15px 8px 0;
+      padding: 4px 5px;
+    }
+  }
+
+  /* Added `.affix` class css when the element is >= 170px (Look: line 8 html) */
+
+
+  .nav {
+    //.navbar-brand {font-size: 30px;}
+    //.navbar-toggle {margin: 13px 15px 13px 0;}
+
+  }
+
+  .navbar-nav {
+    display: inline-block;
+    float: none;
+    > li {
+      float: none;
+      display: inline-block;
+    }
+  }
+}
+

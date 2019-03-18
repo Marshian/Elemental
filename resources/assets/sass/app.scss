@@ -1,87 +1,243 @@
-
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-//@import url(https://fonts.googleapis.com/css?family=Trade+Winds);
-
 // Variables
-@import "bootstrap/variables";
-@import "variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+$blue: #369;
+$indigo: #6610f2;
+$purple: #613d7c;
+$pink: #ff5b77;
+$red: #EB6864;
+$orange: #F57A00;
+$yellow: #F5E625;
+$green: #22B24C;
+$teal: hsl(171, 100%, 41%);
+$cyan: #17a2b8;
+
+$colors: (
+        blue: $blue,
+        indigo: $indigo,
+        purple: $purple,
+        pink: $pink,
+        red: $red,
+        orange: $orange,
+        yellow: $yellow,
+        green: $green,
+        teal: $teal,
+        cyan: $cyan,
+        white: $white,
+        gray: $gray-600,
+        gray-dark: $gray-800
+);
+
+$theme-colors: (
+        primary: $teal,
+        secondary: $gray-600,
+        success: $green,
+        info: $cyan,
+        warning: $yellow,
+        danger: $red,
+        light: $gray-100,
+        dark: $gray-800,
+        blue: $blue,
+        indigo: $indigo,
+        purple: $purple,
+        pink: $pink,
+        teal: $teal,
+        gray: $gray-600,
+);
+
+// Start with assigning color names to specific hex values.
+
+// Create grayscale
+$gray-dark: #222;
+$gray: #333;
+$gray-light: #777;
+$gray-lighter: #aaa;
+$gray-lightest: #eee;
+
+// Reassign color vars to semantic color scheme
+//$brand-primary:             #EB6864;
+//$brand-success:             #22B24C;
+//$brand-info:                #369;
+//$brand-warning:             #F5E625;
+//$brand-danger:              #F57A00;
+//$brand-inverse:             $gray-dark;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-rounded: true;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-hover-media-query: false;
+$enable-grid-classes: true;
+$enable-print-styles: true;
+
+//$spacer: 1rem;
+//$spacers: (
+//        0: 0,
+//        1: ($spacer * .25),
+//        2: ($spacer * .5),
+//        3: $spacer,
+//        4: ($spacer * 1.5),
+//        5: ($spacer * 3),
+//        6: ($spacer * 4),
+//        7: ($spacer * 5)
+//);
+
+$font-size-xs:   .675rem !default;
+$font-weight-light: 300;
+$font-weight-normal: normal;
+$font-weight-bold: 400;
+
+// Buttons
+
+$btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba($black,.075);
+$btn-focus-box-shadow:           none;
+$btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125);
+
+// Navbar
+
+$navbar-padding-y:                  $spacer;
+$navbar-padding-x:                  3rem;
+
+$navbar-brand-font-size:            $font-size-lg;
+// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+$nav-link-height:                   $navbar-brand-font-size * $line-height-base;
+$navbar-brand-height:               ($font-size-base * $line-height-base + $nav-link-padding-y * 2);
+$navbar-brand-padding-y:            ($navbar-brand-height - $nav-link-height) / 2;
+
+//#ecf0f1
+$card-cap-bg:              rgba(102, 113, 115, 0.06);
+//$card-border-color:        rgba(102, 113, 115, 0.18);
 
 // Bootstrap
-@import "bootstrap/mixins";
+//@import "~bootstrap/icons/bootstrap";
 
-// Reset and dependencies
-@import "bootstrap/normalize";
-@import "bootstrap/print";
-//@import "bootstrap/glyphicons";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/print";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/utilities";
+@import "buttons";
+@import "cards";
+@import "nestable";
+@import "selectize";
+@import "accordion";
+@import "icons/font-awesome";
 
-// Core CSS
-@import "bootstrap/scaffolding";
-@import "bootstrap/type";
-@import "bootstrap/code";
-@import "bootstrap/grid";
-@import "bootstrap/tables";
-@import "bootstrap/forms";
-@import "bootstrap/buttons";
-
-// Components
-@import "bootstrap/component-animations";
-@import "bootstrap/dropdowns";
-@import "bootstrap/button-groups";
-@import "bootstrap/input-groups";
-@import "bootstrap/navs";
-@import "bootstrap/navbar";
-@import "bootstrap/breadcrumbs";
-@import "bootstrap/pagination";
-@import "bootstrap/pager";
-@import "bootstrap/labels";
-@import "bootstrap/badges";
-@import "bootstrap/jumbotron";
-@import "bootstrap/thumbnails";
-@import "bootstrap/alerts";
-@import "bootstrap/progress-bars";
-@import "bootstrap/media";
-@import "bootstrap/list-group";
-@import "bootstrap/panels";
-@import "bootstrap/responsive-embed";
-@import "bootstrap/wells";
-@import "bootstrap/close";
-
-// Components w/ JavaScript
-@import "bootstrap/modals";
-@import "bootstrap/tooltip";
-@import "bootstrap/popovers";
-@import "bootstrap/carousel";
-
-// Utility classes
-@import "bootstrap/utilities";
-@import "bootstrap/responsive-utilities";
-
-.navbar-no-margin {
-  margin-bottom: 0;
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
 }
-.section {
-  margin-top: -90px;
-  height: 770px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url(/img/bg/bg.jpg);
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 
-  &:after {
-    bottom: -2px;
-    background-image: url("../img/scratches-1.png");
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    background-size: cover;
-    background-repeat: repeat-x;
-    height: 17px;
-    z-index: 2;
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+  padding: 0 33px;
+}
+
+
+//-----------------
+// Cards
+//==============================
+
+.card-header {
+  h2, h3, h4, h5 {
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
   }
 }
+
+label {
+  //font-weight: 500;
+  //color: #404040
+}
+
+//--------------------------
+
+
+/**
+ * Subheader
+ */
+
+.subheader {
+  background: $gray-100;
+  padding: 20px 0;
+  color: #807c7d;
+  font-weight: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.subheader h2 {
+  margin: 7px 0;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.subheader .breadcrumb {
+  background: transparent;
+  padding: 8px 0 0;
+  margin-bottom: 0;
+  display: inline-block;
+  font-size: 17px;
+
+}
+
+.subheader .breadcrumb a {
+  color: #807c7d;
+}
+
+.subheader .breadcrumb li:before {
+  color: #807c7d;
+  padding: 0px 5px 0 10px;
+}
+
+.subheader .breadcrumb > .active {
+  color: #807c7d;
+  font-weight: 300;
+}
+
+

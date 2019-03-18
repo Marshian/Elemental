@@ -26,11 +26,11 @@
 </style>
 {{ Form::hidden('test_data', Request::old('test_data', $assessment->test_data), array('id' => 'test-data')) }}
 <br>
-<div class="panel panel-default">
-  <div class="panel-heading">
+<div class="card card-default">
+  <div class="card-header">
   	<div class="btn-group pull-right">
   	<a href="#" class="btn btn-primary save-questions"><i class="icon-save"></i>  Save</a>
-  	<a href="#" class="btn btn-default add-question"><i class="icon-plus"></i>  Question</a>
+  	<a href="#" class="btn btn-secondary add-question"><i class="icon-plus"></i>  Question</a>
   	</div>
   	<h4>Questions</h4>
   </div>

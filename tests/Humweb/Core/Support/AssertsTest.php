@@ -13,7 +13,7 @@ class AssertsTest extends TestCase
     public function testAsserts($method, $args = [], $success = false)
     {
         if ( ! $success) {
-            $this->setExpectedException('\InvalidArgumentException');
+            $this->expectException('\InvalidArgumentException');
         }
 
         call_user_func_array(['Humweb\Core\Support\Asserts', $method], $args);

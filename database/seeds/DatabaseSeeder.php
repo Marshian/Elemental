@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
                 'last_name'   => 'BobAdmin',
                 'email'       => 'admin@user.com',
                 'password'    => 'admin!123',
-                'permissions' => [],
+                'permissions' => ['foo'],
             ]);
 
             $basicUser = $this->makeUser([
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
                 'last_name'   => 'DoeUser',
                 'email'       => 'user@user.com',
                 'password'    => 'user!123',
-                'permissions' => []
+                'permissions' => ['bar']
             ]);
 
             // Groups
@@ -68,7 +68,7 @@ class DatabaseSeeder extends Seeder
 
         $this->seedPagesTable();
 
-        $this->seedPostsTable();
+//        $this->seedPostsTable();
     }
 
 
@@ -109,14 +109,113 @@ class DatabaseSeeder extends Seeder
 
     protected function seedPagesTable()
     {
+        $content = <<<EOT
+<div class="blog">
+<div class="container cstm-container">
+<h2 class="news">NEWS HEADLINES</h2>
+
+<div class="row blog-img">
+<div class="col-md-4 col-12"><a href="http://staging.marshian.com.au/#"><img src="/frontend/img/news1.jpg" class="img-fluid"> </a>
+
+<div class="news-title">
+<h3><a href="http://staging.marshian.com.au/#">NEWS TITLE HEADLINE</a></h3>
+
+<h4><a href="http://staging.marshian.com.au/#">RAINBOW SIX</a></h4>
+</div>
+<a href="http://staging.marshian.com.au/#"> </a></div>
+
+<div class="col-md-4 col-12"><a href="http://staging.marshian.com.au/#"><img src="/frontend/img/news2.jpg" class="img-fluid"> </a>
+
+<div class="news-title">
+<h3><a href="http://staging.marshian.com.au/#">NEWS TITLE HEADLINE</a></h3>
+
+<h4><a href="http://staging.marshian.com.au/#">BLACK OPS 4</a></h4>
+</div>
+<a href="http://staging.marshian.com.au/#"> </a></div>
+
+<div class="col-md-4 col-12"><a href="http://staging.marshian.com.au/#"><img src="/frontend/img/news3.jpg" class="img-fluid"> </a>
+
+<div class="news-title">
+<h3><a href="http://staging.marshian.com.au/#">NEWS TITLE HEADLINE</a></h3>
+
+<h4><a href="http://staging.marshian.com.au/#">CSGO</a></h4>
+</div>
+<a href="http://staging.marshian.com.au/#"> </a></div>
+</div>
+
+<section class="video">
+<div class="row">
+<div class="col-md-6 col-lg-3 col-12">
+<h2 class="news">RECENT MATCHES</h2>
+
+<ul>
+	<li class="cstm-vs">
+	<div class="cstm-list"><a href="http://staging.marshian.com.au/#"><img src="/frontend/img/game.png" alt="" class="img-fluid"> <img src="/frontend/img/opposition.png" alt="" class="img-fluid"> <span>vs</span> <img src="/frontend/img/selected.png" alt="" class="img-fluid"> <span class="timing">21:07</span></a></div>
+	</li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+	<li>&nbsp;</li>
+</ul>
+</div>
+
+<div class="col-md-6 col-lg-4 col-12">
+<h2 class="news">LIVESTREAMS</h2>
+
+<ul>
+	<li class="sick"><a href="http://staging.marshian.com.au/#"><img src="/frontend/img/sick.png" alt="" class="img-fluid"> </a>
+
+	<p><a href="http://staging.marshian.com.au/#">sickferal</a></p>
+	<a href="http://staging.marshian.com.au/#"> </a>
+
+	<p><a href="http://staging.marshian.com.au/#">offline</a></p>
+	</li>
+	<li class="sick"><a href="http://staging.marshian.com.au/#"><img src="/frontend/img/sick.png" alt="" class="img-fluid"> </a>
+	<p><a href="http://staging.marshian.com.au/#">sickferal</a></p>
+	<a href="http://staging.marshian.com.au/#"> </a>
+
+	<p><a href="http://staging.marshian.com.au/#">offline</a></p>
+	</li>
+	<li class="sick"><a href="http://staging.marshian.com.au/#"><img src="/frontend/img/sick.png" alt="" class="img-fluid"> </a>
+	<p><a href="http://staging.marshian.com.au/#">sickferal</a></p>
+	<a href="http://staging.marshian.com.au/#"> </a>
+
+	<p><a href="http://staging.marshian.com.au/#">offline</a></p>
+	</li>
+	<li class="sick"><a href="http://staging.marshian.com.au/#"><img src="/frontend/img/sick.png" alt="" class="img-fluid"> </a>
+	<p><a href="http://staging.marshian.com.au/#">sickferal</a></p>
+	<a href="http://staging.marshian.com.au/#"> </a>
+
+	<p><a href="http://staging.marshian.com.au/#">offline</a></p>
+	</li>
+</ul>
+</div>
+
+<div class="col-md-12 col-lg-5 col-12 cstm_video_col">
+<h2 class="news">LATEST MEDIA</h2>
+</div>
+</div>
+</section>
+</div>
+
+<div class="seperate">
+<div class="row">
+<div class="col-md-6 col-6">
+<div class="line">&nbsp;</div>
+</div>
+
+<div class="col-md-6 col-6"><img src="/frontend/img/line-logo.png" alt="" class="img-fluid"></div>
+</div>
+</div>
+</div>
+EOT;
         DB::table('pages')->insert([
             'created_by'       => 1,
             'slug'             => Str::slug('Test title'),
             'title'            => 'Test title',
             'parent_id'        => 0,
             'uri'              => Str::slug('Test title'),
-            'layout'           => '',
-            'content'          => 'Default content',
+            'layout'           => 'layouts.app',
+            'content'          => $content,
             'published'        => 1,
             'css'              => '',
             'js'               => '',

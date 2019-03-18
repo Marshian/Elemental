@@ -30,4 +30,10 @@ return [
 
     'compiled' => realpath(storage_path('framework/views')),
 
+    'emails' => [
+        'css_files' => [
+            base_path('vendor/humweb/contact-module/resources/assets/css/emails.css')
+        ]
+    ],
+
 ];

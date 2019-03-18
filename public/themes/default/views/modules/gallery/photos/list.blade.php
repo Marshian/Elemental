@@ -3,11 +3,11 @@
 
 <br/>
 <br/>
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="card card-default">
+    <div class="card-header">
         <h4>Photos tagged with <div class="label label-primary">{{ $tag }}</div></h4>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
     <div id="timeline" class="photo-grid" data-columns>
         @if (count($photos))
         @foreach ($photos as $photo)

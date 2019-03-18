@@ -8,9 +8,9 @@
 	<div class="container">
 
 
-	<div class="panel panel-default">
-	  <!-- Default panel contents -->
-	  <div class="panel-heading"><h4>{{ $title or '' }} <small class='pull-right'>Total: {{ $teachers->getTotal() }}</small></h4></div>
+	<div class="card card-default">
+	  <!-- Default card contents -->
+	  <div class="card-header"><h4>{{ $title or '' }} <small class='pull-right'>Total: {{ $teachers->getTotal() }}</small></h4></div>
 	    <table class="table">
 	         <thead>
 	         <tr>
@@ -35,7 +35,7 @@
 	         @endforeach
 	     	</tbody>
 	     </table>
-	     <div class="panel-footer">
+	     <div class="card-footer">
 	     {{ $teachers->links() }}
 	     </div>
 	</div>

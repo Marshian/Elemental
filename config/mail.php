@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'sendmail'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,9 @@ return [
     */
 
     'from' => [
-        'address' => 'hello@example.com',
-        'name' => 'Example',
+        //'address' => 'brizzlbeans@yahoo.com',
+        'address' => 'postmaster@darkstarmountaintours.com',
+        'name' => 'Dark Star Mountain Tours',
     ],
 
     /*

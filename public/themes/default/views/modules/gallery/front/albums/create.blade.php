@@ -1,10 +1,10 @@
 @section('content')
 {{ Form::open(array('route' => 'post.albums.create')) }}
-<div class="panel panel-primary">
-    <div class="panel-heading">
+<div class="card card-primary">
+    <div class="card-header">
         <h4>Create Album</h4>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
 
         <div class="form-group">
             {{ Form::label('name', 'Name') }}
@@ -16,9 +16,9 @@
             {{ Form::textarea('description', null, array('class'=> 'form-control')) }}
         </div>
     </div>
-    <div class="panel-footer">
+    <div class="card-footer">
         {{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
-        {{ link_to_route('get.albums', 'Cancel', null, array('class' => 'btn btn-default')) }}
+        {{ link_to_route('get.albums', 'Cancel', null, array('class' => 'btn btn-secondary')) }}
     </div>
 </div>
 {{ Form::close() }}

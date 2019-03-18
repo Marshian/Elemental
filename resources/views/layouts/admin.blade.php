@@ -18,14 +18,12 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
 {{ $metadata or '' }}
 
-<!-- Bootstrap core CSS -->
     <link href="{{ asset('/css/admin.css') }}" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     @yield('styles')
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
@@ -135,7 +133,7 @@
     <hr/>
     <div class="row container-footer">
         <div class="col-sm-8">
-            Copyright © {{ date('Y') }} HumboldtWeb. All Rights Reserved
+            Copyright © {{ date('Y') }} Dark Star Mountain Bike Tours. All rights reserved.
         </div>
         <div class="col-sm-4 hidden-print text-right">
             <a href="#/privacy" target="_blank">Privacy Policy</a> |
