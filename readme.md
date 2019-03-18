@@ -1,1 +1,1 @@
-    "rollbar/rollbar-laravel": "^2.1"
+<h1 align="center"><img src="./public/img/line-logo.png"> Team Elemental</p>
