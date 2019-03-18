@@ -132,7 +132,7 @@
 @endsection
 
 @section('footer_scripts')
-ddddd
+
     <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('js/ace/ace.js') }}"></script>
     <script src="{{ asset('js/ace/mode-javascript.js') }}"></script>
