@@ -16,9 +16,9 @@
     <!-- Styles -->
     <!-- Bootstrap CSS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/all.css') }}">
     @yield('styles')
     <script>
         window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>

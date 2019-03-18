@@ -1,5 +1,3 @@
-@extends('layouts.login')
-
 @section('content')
     <div class="card card-default">
         <div class="card-header">Login</div>

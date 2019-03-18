@@ -7,6 +7,7 @@ body{
 	-webkit-background-repeat: no-repeat;
 	-webkit-background-position: center;
     -webkit-background-size: cover;
+	color: #f6f6f6;
 }
 @media (min-width: 1200px){
 .cstm-container{
