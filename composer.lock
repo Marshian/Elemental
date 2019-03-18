@@ -703,12 +703,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/humweb/menus-module.git",
-                "reference": "49b2ae4d29a7f2eb4cb511bd220f6caf9646d23b"
+                "reference": "57204eb5cf85f4fccf8ec10543a0fc2738cf6c0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humweb/menus-module/zipball/49b2ae4d29a7f2eb4cb511bd220f6caf9646d23b",
-                "reference": "49b2ae4d29a7f2eb4cb511bd220f6caf9646d23b",
+                "url": "https://api.github.com/repos/humweb/menus-module/zipball/57204eb5cf85f4fccf8ec10543a0fc2738cf6c0e",
+                "reference": "57204eb5cf85f4fccf8ec10543a0fc2738cf6c0e",
                 "shasum": ""
             },
             "require": {
@@ -744,7 +744,7 @@
                 "source": "https://github.com/humweb/menus-module/tree/master",
                 "issues": "https://github.com/humweb/menus-module/issues"
             },
-            "time": "2019-03-15T20:52:18+00:00"
+            "time": "2019-03-18T23:34:26+00:00"
         },
         {
             "name": "humweb/modules",
