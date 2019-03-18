@@ -25,7 +25,7 @@ set('bin/composer', '/usr/bin/composer');
 // Hosts
 
 host('elemental')
-    ->set('branch', 'develop')
+    ->set('branch', 'staging')
     ->set('deploy_path', '/srv/users/elemental/apps/elemental-staging');
     
 // Tasks
