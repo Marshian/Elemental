@@ -1,9 +1,10 @@
 body{
-	background: url(../img/background.jpg);
 	font-family: 'Montserrat', sans-serif !important;
+	background-image: url(../img/background.jpg);
 	background-repeat: no-repeat;
 	background-position: 63% 0%;;
     background-size: cover;
+	background-color:  #181818;
 	-webkit-background-repeat: no-repeat;
 	-webkit-background-position: center;
     -webkit-background-size: cover;
