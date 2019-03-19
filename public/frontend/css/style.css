@@ -7,7 +7,7 @@ body{
 	-webkit-background-repeat: no-repeat;
 	-webkit-background-position: center;
     -webkit-background-size: cover;
-	color: #f6f6f6;
+	color: #f6f6f6!important;
 }
 @media (min-width: 1200px){
 .cstm-container{
@@ -232,7 +232,7 @@ p.about{
 #footer{
 	padding-bottom: 28px;
 }
-.footer-section{
+.footer-section, .content-body {
 	background: #252525;
     padding: 35px 80px 20px 80px;
 	border-top: 4px solid #c71b28;

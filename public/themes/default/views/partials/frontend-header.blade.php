@@ -26,3 +26,23 @@
     @yield('header_scripts')
 </head>
 <body>
+<div id="app">
+    <div class="top-header">
+        <div class="container cstm-container">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div class="element">
+                        <a href="http://staging.marshian.com.au/index.html"><img src="{{ asset('frontend/img/main-logo.png') }}" alt="" class="img-fluid d-lg-block d-none"></a>
+                        <a href="http://staging.marshian.com.au/index.html"><img src="{{ asset('frontend/img/footer-logo.png') }}" alt="" class="img-fluid d-block d-lg-none"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="http://staging.marshian.com.au/promo-future-home-living.html"><img src="{{ asset('frontend/img/future.png') }}" alt="" class="img-fluid"></a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <a href="http://staging.marshian.com.au/sponsors-marshian.html"><img src="{{ asset('frontend/img/marshian.png') }}" alt="" class="img-fluid"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+@include('partials.frontend-navbar')

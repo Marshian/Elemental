@@ -1,11 +1,12 @@
 @include('partials.frontend-header')
-@include('partials.frontend-navbar')
 <br>
-<br>
-<div class="container">
+<div class="container cstm-container">
+    <div class="content-body">
     @include('notifications')
     @yield('content')
+    </div>
 </div>
+
 @include('partials.footer')
 <script src="/js/frontend.js"></script>
 </body>
