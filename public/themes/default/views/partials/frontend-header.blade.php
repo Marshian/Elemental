@@ -45,4 +45,4 @@
             </div>
         </div>
     </div>
-@include('partials.frontend-navbar')
+    @include('partials.frontend-navbar')
