@@ -48,7 +48,7 @@
     </div>
 </div>
 
-@include('partials.footer')
+@include('partials.admin-footer')
 <script src="{{ asset('js/app.js') }}"></script>
 @yield('footer_scripts')
 </body>
