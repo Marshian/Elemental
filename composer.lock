@@ -804,12 +804,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/humweb/pages-module.git",
-                "reference": "60417dd3c86b8620d64aa5e355c928cd10636729"
+                "reference": "4cb6ca543273870d23fa16ebd5baad08bc180c72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humweb/pages-module/zipball/60417dd3c86b8620d64aa5e355c928cd10636729",
-                "reference": "60417dd3c86b8620d64aa5e355c928cd10636729",
+                "url": "https://api.github.com/repos/humweb/pages-module/zipball/4cb6ca543273870d23fa16ebd5baad08bc180c72",
+                "reference": "4cb6ca543273870d23fa16ebd5baad08bc180c72",
                 "shasum": ""
             },
             "require": {
@@ -861,7 +861,7 @@
                 "source": "https://github.com/humweb/pages-module/tree/master",
                 "issues": "https://github.com/humweb/pages-module/issues"
             },
-            "time": "2019-03-19T21:28:10+00:00"
+            "time": "2019-03-19T22:00:28+00:00"
         },
         {
             "name": "humweb/publishable",
