@@ -11,7 +11,7 @@
         <ul class="nav navbar-nav navbar-right">
             {{--Authentication Links--}}
             @if (Auth::guest())
-                <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="{{ route('get.login') }}" class="nav-link">Login</a></li>
             @else
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -21,7 +21,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <a href="{{ route('get.admin') }}" class="dropdown-item">Admin</a>
                         <div class="dropdown-divider hide-for-small"></div>
-                        <a href="{{ route('logout') }}" class="dropdown-item">
+                        <a href="{{ route('get.logout') }}" class="dropdown-item">
                             Logout
                         </a>
                     </ul>
