@@ -393,12 +393,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/humweb/auth-module.git",
-                "reference": "589afaca32881bd4983123c5545725b006fab52a"
+                "reference": "6074198e4aab5feb6cf072114f9d86f2580adff7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humweb/auth-module/zipball/589afaca32881bd4983123c5545725b006fab52a",
-                "reference": "589afaca32881bd4983123c5545725b006fab52a",
+                "url": "https://api.github.com/repos/humweb/auth-module/zipball/6074198e4aab5feb6cf072114f9d86f2580adff7",
+                "reference": "6074198e4aab5feb6cf072114f9d86f2580adff7",
                 "shasum": ""
             },
             "require": {
@@ -438,7 +438,7 @@
                 "source": "https://github.com/humweb/auth-module/tree/master",
                 "issues": "https://github.com/humweb/auth-module/issues"
             },
-            "time": "2019-03-20T17:21:16+00:00"
+            "time": "2019-03-20T23:30:14+00:00"
         },
         {
             "name": "humweb/breadcrumbs",
@@ -804,12 +804,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/humweb/pages-module.git",
-                "reference": "155a07003fd06f6eb7ddb6e75e08947fcf361f95"
+                "reference": "2e1ed254a2a44fae241f6ea481b64a6e3e8154a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humweb/pages-module/zipball/155a07003fd06f6eb7ddb6e75e08947fcf361f95",
-                "reference": "155a07003fd06f6eb7ddb6e75e08947fcf361f95",
+                "url": "https://api.github.com/repos/humweb/pages-module/zipball/2e1ed254a2a44fae241f6ea481b64a6e3e8154a8",
+                "reference": "2e1ed254a2a44fae241f6ea481b64a6e3e8154a8",
                 "shasum": ""
             },
             "require": {
@@ -861,7 +861,7 @@
                 "source": "https://github.com/humweb/pages-module/tree/master",
                 "issues": "https://github.com/humweb/pages-module/issues"
             },
-            "time": "2019-03-20T20:49:49+00:00"
+            "time": "2019-03-20T21:48:23+00:00"
         },
         {
             "name": "humweb/publishable",
