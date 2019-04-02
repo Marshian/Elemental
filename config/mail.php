@@ -58,7 +58,7 @@ return [
     'from' => [
         //'address' => 'brizzlbeans@yahoo.com',
         'address' => 'postmaster@darkstarmountaintours.com',
-        'name' => 'Dark Star Mountain Tours',
+        'name' => 'Acme Co.',
     ],
 
     /*

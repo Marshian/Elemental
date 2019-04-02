@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>
         @section('title')
-            {{ $siteSettings['site.name'] or 'Dark Star Mountain Tours' }} - Admin
+            {{ $siteSettings['site.name'] or 'Acme Co.' }} - Admin
         @show
     </title>
     {{ $metadata or '' }}

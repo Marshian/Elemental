@@ -177,28 +177,42 @@ return [
          */
         // App\Providers\BroadcastServiceProvider::class,
         //App\Providers\AuthServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         Humweb\Modules\ModuleServiceProvider::class,
+
         Humweb\Core\AppServiceProvider::class,
         Humweb\Core\RouteServiceProvider::class,
+
         Humweb\ThemeManager\ServiceProvider::class,
+
         Humweb\Html\HtmlServiceProvider::class,
+
         Humweb\Auth\AuthServiceProvider::class,
         Humweb\Auth\AuthRouteServiceProvider::class,
-        Humweb\Settings\ServiceProvider::class,
+
         Humweb\Menus\MenusServiceProvider::class,
         Humweb\Menus\MenusRouteServiceProvider::class,
+
+        Humweb\Settings\ServiceProvider::class,
         Humweb\Settings\SettingsRouteServiceProvider::class,
-//        Humweb\Blog\ServiceProvider::class,
-//        Humweb\Blog\BlogRouteServiceProvider::class,
-//        Humweb\Categories\Http\CategoriesRouteServiceProvider::class,
+
+        Humweb\Blog\ServiceProvider::class,
+        Humweb\Blog\BlogRouteServiceProvider::class,
+
+        Humweb\Categories\CategoriesServiceProvider::class,
+        Humweb\Categories\CategoriesRouteServiceProvider::class,
+
         Humweb\Contact\ContactServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
+
         Humweb\Pages\ServiceProvider::class,
         Humweb\Pages\PagesRouteServiceProvider::class,
+
         Humweb\Tags\ServiceProvider::class,
+
         Humweb\Filemanager\ServiceProvider::class,
         Humweb\Filemanager\FilemanagerRouteServiceProvider::class,
+
         Humweb\Teams\Providers\TeamsServiceProvider::class,
     ],
 

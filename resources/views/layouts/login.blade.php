@@ -1,54 +1,47 @@
 <!DOCTYPE html>
-<!--[if IE 8]>
-<html class="no-js lt-ie9" lang="en">
-<![endif]-->
-
-<!--[if gt IE 8]>
-<html class="no-js" lang="en">
-<![endif]-->
-
+<html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        @section('title')
-            {{ $siteSettings['site.name'] or 'Dark Star Mountain Tours' }} - Admin
-        @show
+        {{ $siteSettings['site.name'] or 'Acme co.' }}
+        @yield('title')
     </title>
-    <title>
-        @section('title')
-            {{ $siteSettings['site.name'] or 'Dark Star Mountain Tours' }} - Admin
-        @show
-    </title>
-{{ $metadata or '' }}
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+{!! $metadata or '' !!}
 
 <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-
-    <!-- Scripts -->
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/all.css') }}">
+    @yield('styles')
     <script>
         window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
     </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     @yield('header_scripts')
 </head>
-
-<body style="padding: 5% 0;">
-
+<body>
 <!-- Container -->
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="text-center">
-                <img src="/img/logo.svg" alt="Dark Star Mountain Tours" style="width: 66%;height: auto;margin-bottom: 20px;">
-            </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-7">
+            <h1 class="text-center mt-5">
+                {{ $siteSettings['site.name'] or 'Acme co.' }}
+            </h1><br><br>
             @include('notifications')
             @yield('content')
         </div>
     </div>
 </div>
-@include('partials.footer')
-<!-- Scripts -->
-<script src="/js/app.js"></script>
+<br>
+<br>
+<hr>
+<p class="text-center text-muted">Copyright 2018-2019 (c) Team Elemental | All Rights Reserved</p>
+@yield('footer_scripts')
 </body>
 </html>

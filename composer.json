@@ -7,65 +7,14 @@
   ],
   "license": "MIT",
   "type": "project",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/modules"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/core-module"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/contact-module"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/auth-module"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/pages-module"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/tags-module"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/html-module"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/settings-module"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/menus-module"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/filemanager-module"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/theme-manager"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/publishable"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/humweb/teams"
-    }
-  ],
+
   "require": {
     "php": ">=7.0.0",
     "fideloper/proxy": "~3.3",
     "humweb/auth-module": "dev-master",
+    "humweb/blog-module": "dev-master",
     "humweb/breadcrumbs": "dev-master",
+    "humweb/categories-module": "dev-master",
     "humweb/contact-module": "dev-master",
     "humweb/core-module": "dev-master",
     "humweb/filemanager-module": "dev-master",
