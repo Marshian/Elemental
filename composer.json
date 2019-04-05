@@ -7,7 +7,68 @@
   ],
   "license": "MIT",
   "type": "project",
-
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/modules"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/core-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/contact-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/auth-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/blog-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/pages-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/tags-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/html-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/settings-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/menus-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/filemanager-module"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/theme-manager"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/publishable"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/teams"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/humweb/esports-module"
+    }
+  ],
   "require": {
     "php": ">=7.0.0",
     "fideloper/proxy": "~3.3",
@@ -17,6 +78,7 @@
     "humweb/categories-module": "dev-master",
     "humweb/contact-module": "dev-master",
     "humweb/core-module": "dev-master",
+    "humweb/esports-module": "dev-master",
     "humweb/filemanager-module": "dev-master",
     "humweb/html-module": "dev-master",
     "humweb/menus-module": "dev-master",
@@ -29,9 +91,11 @@
     "laravel/framework": "5.5.*",
     "laravel/tinker": "~1.0",
     "laravelcollective/html": "^5.5",
-    "humweb/publishable": "dev-master"
+    "humweb/publishable": "dev-master",
+    "spatie/laravel-medialibrary": "^6.0.0"
   },
   "require-dev": {
+    "barryvdh/laravel-debugbar": "^3.2",
     "filp/whoops": "~2.0",
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
