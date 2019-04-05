@@ -22,6 +22,10 @@
     },
     {
       "type": "vcs",
+      "url": "https://github.com/humweb/categories-module"
+    },
+    {
+      "type": "vcs",
       "url": "https://github.com/humweb/auth-module"
     },
     {
