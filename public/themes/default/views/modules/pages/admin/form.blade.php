@@ -2,10 +2,11 @@
 
     @if(is_null($page->id))
         {!! Form::open(['route' => ['post.admin.pages.create']]) !!}
+        {!! Form::hidden('parent_id', old("parent_id", $parent_id)) !!}
     @else
         {!! Form::open(['route' => ['post.admin.pages.edit', $page->id]]) !!}
+        {!! Form::hidden('parent_id', old("parent_id", $page->parent_id)) !!}
     @endif
-    {!! Form::hidden('parent_id', old("parent_id", $page->parent_id)) !!}
     <ul class="nav nav-tabs">
         <li class="nav-item"><a href="#card-general" class="nav-link active" data-toggle="tab">General</a></li>
         <li class="nav-item"><a href="#card-metadata" class="nav-link" data-toggle="tab">Metadata</a></li>
@@ -37,6 +38,7 @@
                     <div id="slug-group" style="display: none;">
                         <div class="form-group">
                             <label for="slug">Slug</label>
+                            <input name="uri" type="hidden" id="uri" value="">
                             {!! Form::text('slug', old("slug", $page->slug), ['id'=>'slug', 'tabindex' => '-1', 'class'=>'form-control']) !!}
                         </div>
                         <hr>
@@ -141,6 +143,7 @@
 
     <script type="text/javascript">
         $(function () {
+            var uri = '{{ ! empty($parent_page) ? $parent_page->uri : '' }}/'
             $('.submit').on('click', function (e) {
                 e.preventDefault()
                 $('#submit').trigger('click');
@@ -150,6 +153,7 @@
 
             $('#slug').on('change', function (e) {
                 $('#slug_uri').text(this.value);
+                $('#uri').val(uri+this.value);
             }).trigger('change');
 
             $('#title').slugify();
