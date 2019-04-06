@@ -773,12 +773,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/humweb/esports-module.git",
-                "reference": "cd2b7ab59a3a0d5fb6db190cec21ee4da4ee64b3"
+                "reference": "4c48b55f91f4af88c77c162e6e41a96fd18a2bbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humweb/esports-module/zipball/cd2b7ab59a3a0d5fb6db190cec21ee4da4ee64b3",
-                "reference": "cd2b7ab59a3a0d5fb6db190cec21ee4da4ee64b3",
+                "url": "https://api.github.com/repos/humweb/esports-module/zipball/4c48b55f91f4af88c77c162e6e41a96fd18a2bbb",
+                "reference": "4c48b55f91f4af88c77c162e6e41a96fd18a2bbb",
                 "shasum": ""
             },
             "require": {
@@ -830,7 +830,7 @@
                 "source": "https://github.com/humweb/esports-module/tree/master",
                 "issues": "https://github.com/humweb/esports-module/issues"
             },
-            "time": "2019-04-06T06:45:14+00:00"
+            "time": "2019-04-06T06:51:58+00:00"
         },
         {
             "name": "humweb/filemanager-module",
