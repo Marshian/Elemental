@@ -973,6 +973,7 @@ border-bottom: 1px solid #4b3b60;
 .nav_rw .navbar{
 	position: absolute;
 	z-index: 999;
+	right: 0px;
 }
 .nav_rw .navbar > button{
 	margin-left: auto;
@@ -1005,6 +1006,16 @@ border-bottom: 1px solid #4b3b60;
 }
 .cstm_cls_nav+ul{
 	padding: 8px 15px;
+}
+.featured_stram{
+	padding: 7px 15px;
+}
+.footer-icon {
+    margin: 10px 10px;
+}
+.country_rw{
+	height:auto;
+}
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	
@@ -1059,6 +1070,7 @@ border-bottom: 1px solid #4b3b60;
 .nav_rw .navbar{
 	position: absolute;
 	z-index: 999;
+	right:0px;
 }
 .nav_rw .navbar > button{
 	margin-left: auto;
@@ -1074,6 +1086,13 @@ border-bottom: 1px solid #4b3b60;
 }
 .cstm_cls_nav{
 	padding:15px;
+	flex-direction: row;
+}
+#footer .collapse {
+	display: flex;
+}
+.footer-icon {
+    margin: 10px 10px;
 }
 }
 
@@ -1085,6 +1104,7 @@ border-bottom: 1px solid #4b3b60;
 .nav_rw .navbar{
 	position: absolute;
 	z-index: 999;
+	right: 0px;
 }
 .nav_rw .navbar > button{
 	margin-left: auto;
@@ -1104,5 +1124,24 @@ border-bottom: 1px solid #4b3b60;
 }
 .nav_rw ul{
 	padding:15px;
+}
+.country_rw{
+	padding:15px;
+	height: auto;
+}
+.featured_stram{
+	padding: 7px 15px;
+}
+.stram_cls{
+	display:flex;
+}
+.social_icon_copy .footer-icon {
+    margin: 0px;
+}
+#footer .collapse {
+	display: flex;
+}
+#footer .new{
+	flex-direction: row;
 }
 }
