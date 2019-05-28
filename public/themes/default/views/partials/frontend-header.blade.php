@@ -29,12 +29,15 @@
 <body>
 <div id="app">
 		<div class="top-header">
-		<div class="container cstm_nav">
+		<div class="cstm_nav">
+			<div class="container">
                 <div class="row nav_rw">
             <div class="col-lg-4 float-left">
                 <img src="frontend/img/logo.png" alt="">
             </div>
+			
              @include('partials.frontend-navbar')
+			 </div>
 	</div>
 </div>
 
