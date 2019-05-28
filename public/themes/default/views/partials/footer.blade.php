@@ -49,14 +49,14 @@
         <div class="copy-right">
 			<div class="container cstm-container">
 			<div class="social_icon_copy"> <div class="footer-icon">
-					<a href="https://www.facebook.com/TeamElem/" target="_blank"><i class="fab fa-facebook-square"></i></i>
+					<a href="https://www.facebook.com/ElementalOCE/" target="_blank"><i class="fab fa-facebook-square"></i></i>
                            <div class="txt_stuff">
 						   <p>FACEBOOK</p>
 						   <p>@ElementelOCE</p>
 						   </div></a>
                     </div>
 			        <div class="footer-icon">
-                        <a href="https://twitter.com/Elemental_Org" target="_blank"><i class="fab fa-twitter"></i>
+                        <a href="https://twitter.com/ElementalOCE" target="_blank"><i class="fab fa-twitter"></i>
                            <div class="txt_stuff">
 						   <p>TWITTER</p>
 						   <p>@ElementelOCE</p>
@@ -64,14 +64,14 @@
                     </div>
                    
                     <div class="footer-icon">
-                        <a href="https://www.twitch.tv/elemental_crew" target="_blank"><i class="fab fa-twitch"></i>
+                        <a href="https://www.twitch.tv/elementaloce" target="_blank"><i class="fab fa-twitch"></i>
                             <div class="txt_stuff">
 							<p>TWITCH</p>
 							<p>@ElementelOCE</p>
 							</div></a>
                     </div>
 					 <div class="footer-icon">
-                        <a href="https://discord.gg/pfVjQaC" target="_blank"><i class="fab fa-discord"></i>
+                        <a href="https://discord.gg/Bmb4cht" target="_blank"><i class="fab fa-discord"></i>
                             <div class="txt_stuff">
 							<p>DISCORD</p>
 							<p>Bmb4cht</p>
