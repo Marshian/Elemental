@@ -903,6 +903,9 @@ border-bottom: 1px solid #4b3b60;
 .txt_stuff a{
 	color: #fff;
 }
+.txt_stuff a:hover{
+	color: #ffb400;
+}
 .social_icon .col-lg-4 > div {
     padding: 12px 5px;
 }
